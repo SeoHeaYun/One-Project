@@ -16,9 +16,6 @@
     <string name="kr_detail_page">상세페이지</string>
 
 
-    <string name="app_name">
-        My Application
-    </string>
     <string name="login">
         로그인
     </string>
@@ -34,5 +31,25 @@
     <string name="double_check">
         중복체크
     </string>
+
+
+    <string name="long_text01">1 안녕하세요 저는 서해윤입니다.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</string>
+    <string name="long_text02">2 안녕하세요 저는 강현정입니다. asaaaaaaaaaaaaaaaaaaasadjsdhgdsflaugasdfasdfadfsdfaskdjfladkhkahdlfkjhadskf
+            zsdfasdfadfadsfasdfadsfasdfasdfasdfflahdfasdfadsfasdfasdfasdfasldkjfhalksdjhfkajdshfljahdfkjahdslfjkahd
+        asdfkhakdjfha;skdhfahdsfkjahdsljfkhalksjdhfljkadshflkjahsdflkjahdskljf
+        asdfasdfasdfasdfasdhasdlkfhasdkjhfaljdsflakjsdf</string>
+    <string name="long_text03">3 안녕하세요 저는 임봉규입니다. asaaaaaaaaaaaaaaaaaaasadjsdhgdsflaugasdfasdfadfsdfaskdjfladkhkahdlfkjhadskf
+            zsdfasdfadfadsfasdfadsfasdfasdfasdfflahdfasdfadsfasdfasdfasdfasldkjfhalksdjhfkajdshfljahdfkjahdslfjkahd
+        asdfkhakdjfha;skdhfahdsfkjahdsljfkhalksjdhfljkadshflkjahsdflkjahdskljf
+        asdfasdfasdfasdfasdhasdlkfhasdkjhfaljdsflakjsdf</string>
+    <string name="long_text04">4 안녕하세요 저는 장혜정입니다. asaaaaaaaaaaaaaaaaaaasadjsdhgdsflaugasdfasdfadfsdfaskdjfladkhkahdlfkjhadskf
+            zsdfasdfadfadsfasdfadsfasdfasdfasdfflahdfasdfadsfasdfasdfasdfasldkjfhalksdjhfkajdshfljahdfkjahdslfjkahd
+        asdfkhakdjfha;skdhfahdsfkjahdsljfkhalksjdhfljkadshflkjahsdflkjahdskljf
+        asdfasdfasdfasdfasdhasdlkfhasdkjhfaljdsflakjsdf</string>
+
+    <string name="id_text01">1번 서해윤</string>
+    <string name="id_text02">2번 강현정</string>
+    <string name="id_text03">3번 임봉규</string>
+    <string name="id_text04">4번 장혜정</string>
 
 </resources>
