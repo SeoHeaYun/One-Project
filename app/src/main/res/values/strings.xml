@@ -1,3 +1,20 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">
+        My Application
+    </string>
+    <string name="login">
+        로그인
+    </string>
+    <string name="signup">
+        회원가입
+    </string>
+    <string name="pw_limit">
+        영문,숫자,특수문자 포함한 8~16자리
+    </string>
+    <string name="one_stagram">
+        Onestagram
+    </string>
+    <string name="double_check">
+        중복체크
+    </string>
 </resources>
