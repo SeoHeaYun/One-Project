@@ -1,18 +1,193 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/btn_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_btn_home1" />
+
+        <ImageView
+            android:id="@+id/btn_mypage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_btn_mypage" />
+
+        <HorizontalScrollView
+            android:id="@+id/sv_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:scrollbars="none"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_home" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/Iv_camera"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_marginStart="15dp"
+                        android:src="@drawable/a1"
+                        android:background="@drawable/shape_imageview_circle"
+                        app:civ_border_color="@color/story_stoke"
+                        app:civ_border_overlay="true"
+                        app:civ_border_width="2dp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_iv_camera"
+                        android:layout_gravity="bottom|end"/>
+
+                </FrameLayout>
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/Iv_detail1"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_marginStart="15dp"
+                    android:padding="2dp"
+                    android:src="@drawable/a1"
+                    android:background="@drawable/shape_imageview_circle"
+                    app:civ_border_color="@color/story_stoke"
+                    app:civ_border_overlay="true"
+                    app:civ_border_width="2dp"  />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/Iv_detail2"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_marginStart="15dp"
+                    android:padding="2dp"
+                    android:src="@drawable/a1"
+                    android:background="@drawable/shape_imageview_circle"
+                    app:civ_border_color="@color/story_stoke"
+                    app:civ_border_overlay="true"
+                    app:civ_border_width="2dp" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/Iv_detail3"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_marginStart="15dp"
+                    android:padding="2dp"
+                    android:src="@drawable/a1"
+                    android:background="@drawable/shape_imageview_circle"
+                    app:civ_border_color="@color/story_stoke"
+                    app:civ_border_overlay="true"
+                    app:civ_border_width="2dp" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/Iv_detail4"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:padding="2dp"
+                    android:src="@drawable/a1"
+                    android:background="@drawable/shape_imageview_circle"
+                    app:civ_border_color="@color/story_stoke"
+                    app:civ_border_overlay="true"
+                    app:civ_border_width="2dp" />
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+        <TextView
+            android:id="@+id/tv_line01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/line_01"
+            app:layout_constraintBottom_toTopOf="@id/tv_id"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sv_horizontal" />
+
+        <TextView
+            android:id="@+id/tv_id"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:text="팀장님 아이디?"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_line01" />
+
+        <TextView
+            android:id="@+id/tv_line02"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/line_01"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_id" />
+
+        <ImageView
+            android:id="@+id/iv_1"
+            android:layout_width="match_parent"
+            android:layout_height="290dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/a1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_id" />
+
+        <TextView
+            android:id="@+id/tv_line03"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/line_01"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_1" />
+
+        <TextView
+            android:id="@+id/tv_post1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="30dp"
+            android:gravity="left"
+            android:text="글aaaaaasasdfasdfsdfadfasdfsdfsd"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_1" />
+
+        <TextView
+            android:id="@+id/tv_line04"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/line_01"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_post1" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
