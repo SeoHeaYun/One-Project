@@ -1,4 +1,21 @@
 <resources>
+
+    <string name="app_name">My Application</string>
+    <string name="en_my_page">My page</string>
+    <string name="kr_my_page">마이페이지</string>
+    <string name="en_name">Name : </string>
+    <string name="kr_name">이름 : </string>
+    <string name="mbti">MBTI : </string>
+    <string name="en_thoughts">thoughts : </string>
+    <string name="kr_thoughts">소감 : </string>
+    <string name="kr_profile_change">프로필 사진 변경</string>
+    <string name="en_profile_change">Change profile picture</string>
+    <string name="kr_revise">수정하기</string>
+    <string name="en_revise">revise</string>
+    <string name="en_detail_page">Detail page</string>
+    <string name="kr_detail_page">상세페이지</string>
+
+
     <string name="app_name">
         My Application
     </string>
@@ -17,4 +34,5 @@
     <string name="double_check">
         중복체크
     </string>
+
 </resources>

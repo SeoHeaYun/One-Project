@@ -1,6 +1,9 @@
 package com.example.myapplication
 
 import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.Button
 import android.content.pm.PackageManager
 import android.graphics.drawable.GradientDrawable
 import android.net.Uri
@@ -43,6 +46,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        if (userMap.isEmpty()){
+            init()
+        }
         // 마이페이지 버튼 클릭 시
         myPageBtn = findViewById(R.id.btn_mypage)
         myPageBtn.setOnClickListener {
