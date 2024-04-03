@@ -8,10 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 
-val userId = MemberManger.getUserIdList()  // ctrl click 하면 함수 설명이 있습니다.
-val userPw = MemberManger.getUserPwList()
-var identifyId = false // 입력한 Id가 회원가입한 정보 즉, UserData에 있는 Id와 동일한지 식별
-var identifyPw = false // 둘다 true 여야 마이페이지로 이동가능
+
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -60,19 +57,8 @@ class LoginActivity : AppCompatActivity() {
 <merge 후 추가구현 사항>
 
 
-//메인페이지 우측 상단 btn 클릭시 조건에 따라 intent 되는 로직
 
-btn_mypage.setOnclickListner {
-if(identifyId && identifyPw) {
-    val profileIntent = Intent(this@MainActivity), ProfileActivity::class.java     // 로그인 되어 있을 시, 내 정보 값 던지면서 개인페이지로 이동
-    intent.putStringExtra("myname", userId.last().toString)
-    startActivity(profileIntent)
-} else {
-     Toast.makeText(this@MainActivity, "로그인 페이지로 이동합니다.", Toast.LENGTH_SHORT).show()
-     val loginIntent = Intent(this@MainActivity, LoginActivity::class.java) // 로그인 안되어 있을 시, 로그인 페이지로 이동
-     startActivity(loginIntent)
- }
-}
+
 
 // 프로필페이지 로그인시 이름 받아오기
 
