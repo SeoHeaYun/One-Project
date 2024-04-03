@@ -14,21 +14,5 @@ class MainActivity : AppCompatActivity() {
         if (userMap.isEmpty()){
             init()
         }
-
-        val btn = findViewById<Button>(R.id.button2)
-        btn.setOnClickListener {
-            val intent = Intent(this, MyPageActivity::class.java)
-            intent.putExtra("loginInfo", "bonggyulim")
-            startActivity(intent)
-        }
-
-        val btn2 = findViewById<Button>(R.id.button)
-        btn2.setOnClickListener {
-            val intent = Intent(this, DetailPageActivity::class.java)
-            intent.putExtra("userId", "bonggyulim")
-            startActivity(intent)
-        }
-
-
     }
 }
