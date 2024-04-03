@@ -60,10 +60,7 @@ class MainActivity : AppCompatActivity() {
         //프로필 사진 이미지뷰 클릭 시
         ivCamera = findViewById(R.id.Iv_camera)
         ivCamera.setOnClickListener {
-            if (ContextCompat.checkSelfPermission(this,
-                    android.Manifest.permission.READ_EXTERNAL_STORAGE
-                ) == PackageManager.PERMISSION_GRANTED
-            ) {
+            if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
                 openGallery()
             } else {
                 requestPermissionLauncher.launch(android.Manifest.permission.READ_EXTERNAL_STORAGE)
