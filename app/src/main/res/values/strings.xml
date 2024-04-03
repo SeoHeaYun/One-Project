@@ -1,4 +1,5 @@
 <resources>
+
     <string name="app_name">My Application</string>
     <string name="en_my_page">My page</string>
     <string name="kr_my_page">마이페이지</string>
@@ -13,5 +14,25 @@
     <string name="en_revise">revise</string>
     <string name="en_detail_page">Detail page</string>
     <string name="kr_detail_page">상세페이지</string>
+
+
+    <string name="app_name">
+        My Application
+    </string>
+    <string name="login">
+        로그인
+    </string>
+    <string name="signup">
+        회원가입
+    </string>
+    <string name="pw_limit">
+        영문,숫자,특수문자 포함한 8~16자리
+    </string>
+    <string name="one_stagram">
+        Onestagram
+    </string>
+    <string name="double_check">
+        중복체크
+    </string>
 
 </resources>

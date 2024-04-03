@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="line_gray">#7D7D7D</color>
+    <color name="startColor">#FECD00</color>
+    <color name="centerColor">#F9373F</color>
+    <color name="endColor">#C913B9</color>
+    <color name="story_stoke">#FF000000</color>
+</resources>
