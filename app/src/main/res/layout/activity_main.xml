@@ -10,7 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-
         <ImageView
             android:id="@+id/btn_home"
             android:layout_width="wrap_content"
@@ -25,8 +24,8 @@
             android:id="@+id/btn_mypage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
+            android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_btn_mypage" />
@@ -38,7 +37,7 @@
             android:layout_marginTop="30dp"
             android:scrollbars="none"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_home">
+            app:layout_constraintTop_toBottomOf="@+id/btn_home" >
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -48,14 +47,13 @@
                 <FrameLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
-
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/Iv_camera"
                         android:layout_width="65dp"
                         android:layout_height="65dp"
                         android:layout_marginStart="15dp"
-                        android:background="@drawable/shape_imageview_circle"
                         android:src="@drawable/a1"
+                        android:background="@drawable/shape_imageview_circle"
                         app:civ_border_color="@color/story_stoke"
                         app:civ_border_overlay="true"
                         app:civ_border_width="2dp" />
@@ -63,8 +61,9 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="bottom|end"
-                        android:src="@drawable/ic_iv_camera" />
+                        android:src="@drawable/ic_iv_camera"
+                        android:layout_gravity="bottom|end"/>
+
                 </FrameLayout>
 
                 <de.hdodenhof.circleimageview.CircleImageView
@@ -72,21 +71,21 @@
                     android:layout_width="65dp"
                     android:layout_height="65dp"
                     android:layout_marginStart="15dp"
-                    android:background="@drawable/shape_imageview_circle"
                     android:padding="2dp"
                     android:src="@drawable/a1"
+                    android:background="@drawable/shape_imageview_circle"
                     app:civ_border_color="@color/story_stoke"
                     app:civ_border_overlay="true"
-                    app:civ_border_width="2dp" />
+                    app:civ_border_width="2dp"  />
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/Iv_detail2"
                     android:layout_width="65dp"
                     android:layout_height="65dp"
                     android:layout_marginStart="15dp"
-                    android:background="@drawable/shape_imageview_circle"
                     android:padding="2dp"
                     android:src="@drawable/a1"
+                    android:background="@drawable/shape_imageview_circle"
                     app:civ_border_color="@color/story_stoke"
                     app:civ_border_overlay="true"
                     app:civ_border_width="2dp" />
@@ -96,9 +95,9 @@
                     android:layout_width="65dp"
                     android:layout_height="65dp"
                     android:layout_marginStart="15dp"
-                    android:background="@drawable/shape_imageview_circle"
                     android:padding="2dp"
                     android:src="@drawable/a1"
+                    android:background="@drawable/shape_imageview_circle"
                     app:civ_border_color="@color/story_stoke"
                     app:civ_border_overlay="true"
                     app:civ_border_width="2dp" />
@@ -109,9 +108,9 @@
                     android:layout_height="65dp"
                     android:layout_marginStart="15dp"
                     android:layout_marginEnd="15dp"
-                    android:background="@drawable/shape_imageview_circle"
                     android:padding="2dp"
                     android:src="@drawable/a1"
+                    android:background="@drawable/shape_imageview_circle"
                     app:civ_border_color="@color/story_stoke"
                     app:civ_border_overlay="true"
                     app:civ_border_width="2dp" />
@@ -120,7 +119,7 @@
 
         </HorizontalScrollView>
 
-<!-- 게시글 -->
+        <!-- 게시글 -->
         <TextView
             android:id="@+id/tv_line01"
             android:layout_width="match_parent"
@@ -142,7 +141,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_line01" />
 
-
         <TextView
             android:id="@+id/tv_line02"
             android:layout_width="match_parent"
@@ -163,29 +161,7 @@
             app:layout_constraintTop_toBottomOf="@id/top_id01" />
 
         <TextView
-            android:id="@+id/tv_line1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:background="@drawable/line_01"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/iv_1" />
-
-        <TextView
-            android:id="@+id/tv_line2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:background="@drawable/line_01"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/iv_1" />
-
-        <TextView
-            android:id="@+id/tv_line3"
+            android:id="@+id/tv_line03"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:background="@drawable/line_01"
@@ -203,7 +179,6 @@
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_line03" />
-
 
         <TextView
             android:id="@+id/long_text01"
@@ -233,16 +208,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/long_text01" />
 
-
         <!--2 번째-->
         <TextView
             android:id="@+id/tv_line04"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
             android:background="@drawable/line_01"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ddd01"
             android:layout_marginTop="30dp"/>
@@ -257,7 +229,6 @@
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_line04" />
-
 
         <TextView
             android:id="@+id/tv_line05"
@@ -298,7 +269,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_line06" />
 
-
         <TextView
             android:id="@+id/long_text02"
             android:layout_width="match_parent"
@@ -327,7 +297,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/long_text02" />
 
-    <!--3 번째-->
+        <!--3 번째-->
         <TextView
             android:id="@+id/tv_line07"
             android:layout_width="match_parent"
@@ -348,8 +318,6 @@
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_line07" />
-
-
 
         <TextView
             android:id="@+id/tv_line08"
@@ -390,7 +358,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_line09" />
 
-
         <TextView
             android:id="@+id/long_text03"
             android:layout_width="match_parent"
@@ -419,7 +386,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/long_text03" />
 
-    <!--4 번째-->
+        <!--4 번째-->
         <TextView
             android:id="@+id/tv_line10"
             android:layout_width="match_parent"
@@ -440,7 +407,6 @@
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_line10" />
-
 
         <TextView
             android:id="@+id/tv_line11"
@@ -481,7 +447,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_line12" />
 
-
         <TextView
             android:id="@+id/long_text04"
             android:layout_width="match_parent"
@@ -510,10 +475,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/long_text04"
             android:paddingBottom="50dp"/>
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
-
 
 </ScrollView>

@@ -12,6 +12,7 @@ import android.widget.TextView
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import com.example.myapplication.MemberManger.userMap
 
 class MyPageActivity : AppCompatActivity() {
     private lateinit var profileImage: ImageView
@@ -43,7 +44,6 @@ class MyPageActivity : AppCompatActivity() {
             }
         }
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_page)
@@ -62,13 +62,14 @@ class MyPageActivity : AppCompatActivity() {
         // 수정하기 버튼
         val btnRevise = findViewById<Button>(R.id.btn_revise)
         btnRevise.setOnClickListener {
-            val userRevise = UserInfo(
+            val userRevise = MemberManger.UserInfo(
                 name.text.toString(),
                 mbti.text.toString(),
                 thoughts.text.toString(),
                 imageUri,
                 userMap[loginInfo]?.postImage,
-                userMap[loginInfo]?.postWriting)
+                userMap[loginInfo]?.postWriting
+            )
 
             userMap[loginInfo] = userRevise
         }
@@ -113,7 +114,6 @@ class MyPageActivity : AppCompatActivity() {
         userName2.text = loginInfo
         userMap[loginInfo]?.postImage?.let { postImage2.setImageResource(it[1]) }
         postWriting2.text = userMap[loginInfo]?.postWriting?.get(1)
-
 
     }
 }
