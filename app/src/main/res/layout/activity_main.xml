@@ -23,13 +23,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="70dp"
-            android:layout_marginTop="15dp"
             android:fontFamily="@font/logo"
             android:text="@string/one_stagram"
             android:textColor="@color/purple"
             android:textSize="35dp"
-            app:layout_constraintStart_toEndOf="@+id/btn_home"
+            android:layout_marginTop="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
@@ -46,7 +46,7 @@
             android:id="@+id/sv_horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="28dp"
             android:scrollbars="none"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btn_home" >
@@ -167,7 +167,7 @@
             android:layout_width="match_parent"
             android:layout_height="280dp"
             android:layout_marginTop="10dp"
-            android:src="@drawable/user1_post1"
+            android:src="@drawable/paris"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/top_id01" />
