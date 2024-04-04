@@ -167,7 +167,7 @@
             android:layout_width="match_parent"
             android:layout_height="280dp"
             android:layout_marginTop="10dp"
-            android:src="@drawable/user1_post1"
+            android:src="@drawable/paris"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/top_id01" />
