@@ -17,8 +17,7 @@ import androidx.core.content.ContextCompat
 import com.example.myapplication.MemberManger.init
 import com.example.myapplication.MemberManger.userMap
 
-// 테스트
-
+val a = 0
 lateinit var myPageBtn: ImageView // 모든 페이지 좌측 상단에 있는 홈버튼
 lateinit var homeIntent: Intent
 var identifyId = false // ID,PW 입력값과 UserData 리스트값과 일치하는지 비교 -> 둘다 true 여야 로그인&마이페이지 진입가능
