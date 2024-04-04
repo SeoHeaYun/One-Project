@@ -1,55 +1,51 @@
 <resources>
-
-    <string name="app_name">My Application</string>
-    <string name="en_my_page">My page</string>
-    <string name="kr_my_page">마이페이지</string>
-    <string name="en_name">Name : </string>
-    <string name="kr_name">이름 : </string>
-    <string name="mbti">MBTI : </string>
-    <string name="en_thoughts">thoughts : </string>
-    <string name="kr_thoughts">소감 : </string>
-    <string name="kr_profile_change">프로필 사진 변경</string>
-    <string name="en_profile_change">Change profile picture</string>
-    <string name="kr_revise">수정하기</string>
-    <string name="en_revise">revise</string>
-    <string name="en_detail_page">Detail page</string>
-    <string name="kr_detail_page">상세페이지</string>
+    <string name="sample">안녕하세요</string>
+    <string name="my_page">마이페이지</string>
+    <string name="name">이름 : </string>
+    <string name="mbti" translatable="false">MBTI : </string>
+    <string name="feedback">소감 : </string>
+    <string name="profile_change">프로필 사진 변경</string>
+    <string name="revise">수정하기</string>
+    <string name="detail_page">상세페이지</string>
 
 
-    <string name="login">
+    <string name="login" translatable="false">
         로그인
     </string>
-    <string name="signup">
+    <string name="signup" translatable="false">
         회원가입
     </string>
-    <string name="pw_limit">
+    <string name="pw_limit" translatable="false">
         영문,숫자,특수문자 포함한 8~16자리
     </string>
-    <string name="one_stagram">
+    <string name="one_stagram" translatable="false">
         Onestagram
     </string>
-    <string name="double_check">
+    <string name="double_check" translatable="false">
         중복체크
     </string>
 
 
-    <string name="long_text01">1 안녕하세요 저는 서해윤입니다.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</string>
-    <string name="long_text02">2 안녕하세요 저는 강현정입니다. asaaaaaaaaaaaaaaaaaaasadjsdhgdsflaugasdfasdfadfsdfaskdjfladkhkahdlfkjhadskf
+    <string name="long_text01" translatable="false">1 안녕하세요 저는 서해윤입니다.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</string>
+    <string name="long_text02" translatable="false">2 안녕하세요 저는 강현정입니다. asaaaaaaaaaaaaaaaaaaasadjsdhgdsflaugasdfasdfadfsdfaskdjfladkhkahdlfkjhadskf
             zsdfasdfadfadsfasdfadsfasdfasdfasdfflahdfasdfadsfasdfasdfasdfasldkjfhalksdjhfkajdshfljahdfkjahdslfjkahd
         asdfkhakdjfha;skdhfahdsfkjahdsljfkhalksjdhfljkadshflkjahsdflkjahdskljf
         asdfasdfasdfasdfasdhasdlkfhasdkjhfaljdsflakjsdf</string>
-    <string name="long_text03">3 안녕하세요 저는 임봉규입니다. asaaaaaaaaaaaaaaaaaaasadjsdhgdsflaugasdfasdfadfsdfaskdjfladkhkahdlfkjhadskf
+    <string name="long_text03" translatable="false">3 안녕하세요 저는 임봉규입니다. asaaaaaaaaaaaaaaaaaaasadjsdhgdsflaugasdfasdfadfsdfaskdjfladkhkahdlfkjhadskf
             zsdfasdfadfadsfasdfadsfasdfasdfasdfflahdfasdfadsfasdfasdfasdfasldkjfhalksdjhfkajdshfljahdfkjahdslfjkahd
         asdfkhakdjfha;skdhfahdsfkjahdsljfkhalksjdhfljkadshflkjahsdflkjahdskljf
         asdfasdfasdfasdfasdhasdlkfhasdkjhfaljdsflakjsdf</string>
-    <string name="long_text04">4 안녕하세요 저는 장혜정입니다. asaaaaaaaaaaaaaaaaaaasadjsdhgdsflaugasdfasdfadfsdfaskdjfladkhkahdlfkjhadskf
+    <string name="long_text04" translatable="false">4 안녕하세요 저는 장혜정입니다. asaaaaaaaaaaaaaaaaaaasadjsdhgdsflaugasdfasdfadfsdfaskdjfladkhkahdlfkjhadskf
             zsdfasdfadfadsfasdfadsfasdfasdfasdfflahdfasdfadsfasdfasdfasdfasldkjfhalksdjhfkajdshfljahdfkjahdslfjkahd
         asdfkhakdjfha;skdhfahdsfkjahdsljfkhalksjdhfljkadshflkjahsdflkjahdskljf
         asdfasdfasdfasdfasdhasdlkfhasdkjhfaljdsflakjsdf</string>
 
-    <string name="id_text01">1번 서해윤</string>
-    <string name="id_text02">2번 강현정</string>
-    <string name="id_text03">3번 임봉규</string>
-    <string name="id_text04">4번 장혜정</string>
+    <string name="id_text01" translatable="false">1번 서해윤</string>
+    <string name="id_text02" translatable="false">2번 강현정</string>
+    <string name="id_text03" translatable="false">3번 임봉규</string>
+    <string name="id_text04" translatable="false">4번 장혜정</string>
+    <string name="app_name" translatable="false">Onestargram</string>
+    <string name="kr">한글</string>
+    <string name="en">영어</string>
 
 </resources>

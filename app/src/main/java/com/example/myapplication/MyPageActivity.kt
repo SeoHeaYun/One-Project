@@ -1,22 +1,31 @@
 package com.example.myapplication
 
+import android.app.Activity
+import android.content.Context
 import android.content.Intent
+import android.content.res.Configuration
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.RadioButton
 import android.widget.TextView
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.MemberManger.userMap
+import java.util.Locale
 
 class MyPageActivity : AppCompatActivity() {
     private lateinit var profileImage: ImageView
     private lateinit var loginInfo: String
+    private lateinit var korean: RadioButton
+    private lateinit var english: RadioButton
+    private lateinit var languageCode: String
     private var imageUri: Uri? = null
 
     // 갤러리 열기
@@ -115,5 +124,43 @@ class MyPageActivity : AppCompatActivity() {
         userMap[loginInfo]?.postImage?.let { postImage2.setImageResource(it[1]) }
         postWriting2.text = userMap[loginInfo]?.postWriting?.get(1)
 
+
+        // 다국어지원
+        korean = findViewById(R.id.rb_kr)
+        english = findViewById(R.id.rb_en)
+
+        val sharedPrefernces = getSharedPreferences("Settings", Activity.MODE_PRIVATE)
+        val language = sharedPrefernces.getString("My_Lang", "")
+        if (language != null) {
+            Log.d("로그", "language :$language")
+            languageCode = language
+        }
+
+        if(languageCode == "en" || languageCode == ""){
+            english.isChecked = true
+        } else {
+            korean.isChecked = true
+        }
+
+        korean.setOnClickListener{
+            setLocate("ko")
+            recreate()
+        }
+
+        english.setOnClickListener {
+            setLocate("en")
+            recreate()
+        }
+    }
+
+    private fun setLocate(Lang: String) {
+        val locale = Locale(Lang)
+        Locale.setDefault(locale)
+        val config = Configuration()
+        config.setLocale(locale)
+        baseContext.resources.updateConfiguration(config, baseContext.resources.displayMetrics)
+        val editor = getSharedPreferences("Settings", Context.MODE_PRIVATE).edit()
+        editor.putString("My_Lang", Lang)
+        editor.apply()
     }
 }
