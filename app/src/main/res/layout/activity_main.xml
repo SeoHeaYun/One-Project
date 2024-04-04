@@ -23,13 +23,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="15dp"
             android:fontFamily="@font/logo"
             android:text="@string/one_stagram"
             android:textColor="@color/purple"
             android:textSize="35dp"
-            android:layout_marginTop="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btn_home"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
@@ -148,7 +148,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
             android:text="@string/id_text01"
-            android:textSize="11sp"
+            android:textSize="12sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_line01" />
@@ -167,7 +167,7 @@
             android:layout_width="match_parent"
             android:layout_height="280dp"
             android:layout_marginTop="10dp"
-            android:src="@drawable/a1"
+            android:src="@drawable/user1_post1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/top_id01" />
@@ -187,7 +187,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:text="@string/id_text01"
-            android:textSize="10sp"
+            android:textSize="11sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_line03" />
@@ -237,7 +237,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
             android:text="@string/id_text02"
-            android:textSize="11sp"
+            android:textSize="12sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_line04" />
@@ -256,7 +256,7 @@
             android:layout_width="match_parent"
             android:layout_height="290dp"
             android:layout_marginTop="10dp"
-            android:src="@drawable/a1"
+            android:src="@drawable/user3_post1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/top_id02" />
@@ -276,7 +276,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:text="@string/id_text02"
-            android:textSize="10sp"
+            android:textSize="11sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_line06" />
@@ -326,7 +326,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
             android:text="@string/id_text03"
-            android:textSize="11sp"
+            android:textSize="12sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_line07" />
@@ -345,7 +345,7 @@
             android:layout_width="match_parent"
             android:layout_height="290dp"
             android:layout_marginTop="10dp"
-            android:src="@drawable/a1"
+            android:src="@drawable/user3_post2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/top_id03" />
@@ -365,7 +365,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:text="@string/id_text03"
-            android:textSize="10sp"
+            android:textSize="11sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_line09" />
@@ -415,7 +415,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
             android:text="@string/id_text04"
-            android:textSize="11sp"
+            android:textSize="12sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_line10" />
@@ -434,7 +434,7 @@
             android:layout_width="match_parent"
             android:layout_height="290dp"
             android:layout_marginTop="10dp"
-            android:src="@drawable/a1"
+            android:src="@drawable/user4_post1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/top_id04" />
@@ -454,7 +454,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:text="@string/id_text04"
-            android:textSize="10sp"
+            android:textSize="11sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_line12" />

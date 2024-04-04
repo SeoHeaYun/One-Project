@@ -112,8 +112,6 @@
             android:layout_height="50dp"
             android:layout_marginTop="15dp"
             android:background="@drawable/toggle_round"
-            app:counterEnabled="true"
-            app:counterMaxLength="16"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/etv_idtoggle2"

@@ -5,6 +5,9 @@ import android.net.Uri
 // 회원 정보 값 리스트에 넣어 보관하는 싱글톤
 
 object MemberManger {
+
+
+    // 회원가입 데이터
     data class UserData(val userId: String, val userPw: String)
 
     val memberList = mutableListOf<UserData>()  // 회원의 id와 pw를 한 쌍으로 보관하는 리스트
@@ -24,6 +27,8 @@ object MemberManger {
 
     var userMap= mutableMapOf<String, UserInfo>()
 
+
+    // 데이터 뿌리는 곳
     data class UserInfo(
         var userName: String,
         var userMbti: String,
