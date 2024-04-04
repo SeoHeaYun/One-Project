@@ -1,21 +1,31 @@
 package com.example.myapplication
 
+import android.app.Activity
+import android.content.Context
 import android.content.Intent
+import android.content.res.Configuration
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.RadioButton
 import android.widget.TextView
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import com.example.myapplication.MemberManger.userMap
+import java.util.Locale
 
 class MyPageActivity : AppCompatActivity() {
     private lateinit var profileImage: ImageView
     private lateinit var loginInfo: String
+    private lateinit var korean: RadioButton
+    private lateinit var english: RadioButton
+    private lateinit var languageCode: String
     private var imageUri: Uri? = null
 
     // 갤러리 열기
@@ -28,6 +38,7 @@ class MyPageActivity : AppCompatActivity() {
                     "image/*"
                 )
                 pickImageLauncher.launch(intent)
+                right()
             }
         }
 
@@ -43,10 +54,17 @@ class MyPageActivity : AppCompatActivity() {
             }
         }
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_page)
+
+        // 좌측 상단 home 버튼 클릭
+        myPageBtn = findViewById(R.id.btn_home)
+        myPageBtn.setOnClickListener {
+            homeIntent = Intent(this@MyPageActivity, MainActivity::class.java)
+            startActivity(homeIntent)
+            left()
+        }
 
         // 로그인 정보로 프로필 정보 가져오기
         loginInfo = intent.getStringExtra("loginInfo").toString()
@@ -62,13 +80,14 @@ class MyPageActivity : AppCompatActivity() {
         // 수정하기 버튼
         val btnRevise = findViewById<Button>(R.id.btn_revise)
         btnRevise.setOnClickListener {
-            val userRevise = UserInfo(
+            val userRevise = MemberManger.UserInfo(
                 name.text.toString(),
                 mbti.text.toString(),
                 thoughts.text.toString(),
                 imageUri,
                 userMap[loginInfo]?.postImage,
-                userMap[loginInfo]?.postWriting)
+                userMap[loginInfo]?.postWriting
+            )
 
             userMap[loginInfo] = userRevise
         }
@@ -79,12 +98,6 @@ class MyPageActivity : AppCompatActivity() {
             profileImage.setImageResource(R.drawable.defaultprofile)
         }
 
-        // mainActivity로 이동하는 버튼
-        val btnHome = findViewById<ImageView>(R.id.btn_home)
-        btnHome.setOnClickListener{
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        }
 
         // 프로필 사진 변경하는 버튼(버전에 따라 선택)
         val btnProfileChange = findViewById<Button>(R.id.btn_profile_change)
@@ -115,5 +128,42 @@ class MyPageActivity : AppCompatActivity() {
         postWriting2.text = userMap[loginInfo]?.postWriting?.get(1)
 
 
+        // 다국어지원
+        korean = findViewById(R.id.rb_kr)
+        english = findViewById(R.id.rb_en)
+
+        val sharedPrefernces = getSharedPreferences("Settings", Activity.MODE_PRIVATE)
+        val language = sharedPrefernces.getString("My_Lang", "")
+        if (language != null) {
+            Log.d("로그", "language :$language")
+            languageCode = language
+        }
+
+        if(languageCode == "en" || languageCode == ""){
+            english.isChecked = true
+        } else {
+            korean.isChecked = true
+        }
+
+        korean.setOnClickListener{
+            setLocate("ko")
+            recreate()
+        }
+
+        english.setOnClickListener {
+            setLocate("en")
+            recreate()
+        }
+    }
+
+    private fun setLocate(Lang: String) {
+        val locale = Locale(Lang)
+        Locale.setDefault(locale)
+        val config = Configuration()
+        config.setLocale(locale)
+        baseContext.resources.updateConfiguration(config, baseContext.resources.displayMetrics)
+        val editor = getSharedPreferences("Settings", Context.MODE_PRIVATE).edit()
+        editor.putString("My_Lang", Lang)
+        editor.apply()
     }
 }

@@ -9,15 +9,23 @@ import android.widget.EditText
 import android.widget.Toast
 
 
+
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-
         val id = findViewById<EditText>(R.id.etv_id)
         val pw = findViewById<EditText>(R.id.etv_password)
         val login = findViewById<Button>(R.id.btn_login)
         val signup = findViewById<Button>(R.id.btn_signup)
+
+        // 좌측 상단 home 버튼 클릭
+        myPageBtn = findViewById(R.id.btn_home)
+        myPageBtn.setOnClickListener {
+            homeIntent = Intent(this@LoginActivity, MainActivity::class.java)
+            startActivity(homeIntent)
+            left()
+        }
 
         // 회원가입 페이지로 이동하는 버튼
         signup.setOnClickListener {
@@ -28,18 +36,26 @@ class LoginActivity : AppCompatActivity() {
 
         // 로그인 버튼
         login.setOnClickListener {
+            val getUserId = MemberManger.getUserIdList()
+            val getUserPw = MemberManger.getUserPwList()
+            Log.d("logA", MemberManger.memberList.toString())
+            Log.d("logB", getUserId.toString())
             if (id.text.isBlank() || pw.text.isBlank()) {   // 문자열이 없거나, 공백으로 이루어진 경우
                 Toast.makeText(this@LoginActivity, "입력되지 않은 정보가 있습니다.", Toast.LENGTH_SHORT).show()
             } else if (id.text.isNotBlank() && pw.text.isNotBlank()) {  // text가 전부 채워져 있는 경우
-                    if (userId.contains(id.text.toString())) {  // user data의 id와 입력한 id값 비교
+                    if (getUserId.contains(id.text.toString())) {  // user data의 id와 입력한 id값 비교
                         identifyId = true
                     }
-                    if (userPw.contains(pw.text.toString())) {  // user data의 pw와 입력한 pw값 비교
+                    if (getUserPw.contains(pw.text.toString())) {  // user data의 pw와 입력한 pw값 비교
                         identifyPw = true
                     }
                 }
                 if (identifyId && identifyPw) {  // id,pw값 회원가입 정보와 모두 같은 경우
                     Toast.makeText(this@LoginActivity, "로그인 성공", Toast.LENGTH_SHORT).show()
+                    homeIntent = Intent(this@LoginActivity, MainActivity::class.java)
+                    startActivity(homeIntent)
+                    right()
+
                 } else {
                     Toast.makeText(
                         this@LoginActivity,
@@ -55,10 +71,6 @@ class LoginActivity : AppCompatActivity() {
 
 /*
 <merge 후 추가구현 사항>
-
-
-
-
 
 // 프로필페이지 로그인시 이름 받아오기
 

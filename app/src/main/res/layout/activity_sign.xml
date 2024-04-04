@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"
@@ -14,57 +14,60 @@
 
         <ImageView
             android:id="@+id/btn_home"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
-            android:src="@drawable/icons"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_btn_home" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="70dp"
-            android:layout_marginTop="15dp"
             android:fontFamily="@font/logo"
             android:text="@string/one_stagram"
             android:textColor="@color/purple"
             android:textSize="35dp"
-            app:layout_constraintStart_toEndOf="@+id/btn_home"
+            android:layout_marginTop="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tv_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="80dp"
             android:text="@string/signup"
-            android:textSize="30dp"
+            android:textSize="20dp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btn_home" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/etv_nametoggle"
-            android:layout_width="330dp"
-            android:layout_height="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
             android:layout_marginTop="60dp"
             android:background="@drawable/toggle_round"
             android:paddingTop="3dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_login">
+            app:layout_constraintTop_toBottomOf="@id/tv_login"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etv_signupname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="7dp"
-                android:layout_marginEnd="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
                 android:background="@null"
                 android:hint="이름"
+                android:textSize="15sp"
                 app:layout_constraintBottom_toTopOf="@+id/etv_idtoggle2"
                 app:layout_constraintTop_toBottomOf="@+id/tv_login" />
 
@@ -72,21 +75,21 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/etv_idtoggle2"
-            android:layout_width="230dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="15dp"
+            android:layout_width="220dp"
+            android:layout_height="45dp"
             android:layout_marginTop="15dp"
             android:background="@drawable/toggle_round"
             android:paddingTop="3dp"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/etv_nametoggle"
             app:layout_constraintTop_toBottomOf="@id/etv_nametoggle">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etv_signupid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="7dp"
-                android:layout_marginEnd="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:textSize="15sp"
                 android:background="@null"
                 android:hint="아이디" />
 
@@ -96,48 +99,49 @@
         <Button
             android:id="@+id/btn_double_check"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="13dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="10dp"
             android:background="@drawable/btn_round"
             android:text="@string/double_check"
             android:textColor="@color/white"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/etv_pwtoggle"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@id/etv_idtoggle2"
             app:layout_constraintStart_toEndOf="@+id/etv_idtoggle2"
-            app:layout_constraintTop_toBottomOf="@+id/etv_nametoggle" />
-
+            app:layout_constraintTop_toTopOf="@id/etv_idtoggle2"
+            app:layout_constraintVertical_bias="1.0" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/etv_pwtoggle"
-            android:layout_width="330dp"
-            android:layout_height="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
             android:layout_marginTop="15dp"
             android:background="@drawable/toggle_round"
-            app:counterEnabled="true"
-            app:counterMaxLength="16"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/etv_idtoggle2"
-            app:passwordToggleEnabled="true">
+            app:passwordToggleEnabled="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etv_signuppw"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginBottom="3dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="10dp"
                 android:background="@color/white"
                 android:hint="@string/pw_limit"
                 android:inputType="textPassword"
-                android:textSize="18sp" />
+                android:textSize="14sp"
+                />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/btn_realsignup"
-            android:layout_width="330dp"
+            android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="30dp"
             android:background="@drawable/btn_round"
             android:text="@string/signup"
             android:textColor="@color/white"
@@ -145,7 +149,10 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/etv_pwtoggle" />
+            app:layout_constraintTop_toBottomOf="@id/etv_pwtoggle"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"/>
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
