@@ -63,6 +63,7 @@ class MainActivity : AppCompatActivity() {
                 Log.d("logC", identifyPw.toString())
                 if(identifyId && identifyPw) {
                     val profileIntent = Intent(this@MainActivity, MyPageActivity::class.java)   // 로그인 되어 있을 시, 내 정보 값 던지면서 개인페이지로 이동
+
                     startActivity(profileIntent)
                     right()
                 } else {
@@ -116,6 +117,7 @@ class MainActivity : AppCompatActivity() {
             var long04 = findViewById<TextView>(R.id.long_text04)
             var short04 = findViewById<TextView>(R.id.ddd04)
 
+
             //게시글 사진위의 아이디 클릭시 디테일 페이지로 전환
             //1번
 
@@ -135,9 +137,6 @@ class MainActivity : AppCompatActivity() {
                 right()
             }
         }
-
-
-
 
             //더보기 기능 실행
             setViewMore(long01, short01)

@@ -6,7 +6,6 @@ import android.net.Uri
 
 object MemberManger {
 
-
     // 회원가입 데이터
     data class UserData(val userId: String, val userPw: String)
 
@@ -25,10 +24,11 @@ object MemberManger {
         memberList.add(newMember)
     }
 
-    var userMap= mutableMapOf<String, UserInfo>()
+
 
 
     // 데이터 뿌리는 곳
+    var userMap= mutableMapOf<String, UserInfo>()
     data class UserInfo(
         var userName: String,
         var userMbti: String,
