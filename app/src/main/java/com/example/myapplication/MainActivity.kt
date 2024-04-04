@@ -79,12 +79,39 @@ class MainActivity : AppCompatActivity() {
         var long04 = findViewById<TextView>(R.id.long_text04)
         var short04 = findViewById<TextView>(R.id.ddd04)
 
+        //게시글 사진위의 아이디 클릭시 디테일 페이지로 전환
+        //1번
         var id01 = findViewById<TextView>(R.id.top_id01)
         id01.setOnClickListener {
-            var intent = Intent(this,DetailPageActivity::class.java)
-            intent.putExtra("userId",id01.text.toString())
+            var intent = Intent(this, DetailPageActivity::class.java)
+            intent.putExtra("userId", id01.text.toString())
             startActivity(intent)
         }
+
+        //2번
+        var id02 = findViewById<TextView>(R.id.top_id02)
+        id02.setOnClickListener {
+            var intent = Intent(this, DetailPageActivity::class.java)
+            intent.putExtra("userId", id02.text.toString())
+            startActivity(intent)
+        }
+
+        //3번
+        var id03 = findViewById<TextView>(R.id.top_id03)
+        id03.setOnClickListener {
+            var intent = Intent(this, DetailPageActivity::class.java)
+            intent.putExtra("userId", id03.text.toString())
+            startActivity(intent)
+        }
+
+        //4번
+        var id04 = findViewById<TextView>(R.id.top_id04)
+        id04.setOnClickListener {
+            var intent = Intent(this, DetailPageActivity::class.java)
+            intent.putExtra("userId", id04.text.toString())
+            startActivity(intent)
+        }
+
 
         //더보기 기능 실행
         setViewMore(long01, short01)
