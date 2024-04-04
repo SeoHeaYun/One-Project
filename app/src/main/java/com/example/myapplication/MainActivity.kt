@@ -52,111 +52,100 @@ class MainActivity : AppCompatActivity() {
         }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+            super.onCreate(savedInstanceState)
+            setContentView(R.layout.activity_main)
 
-        if (userMap.isEmpty()){
-            init()
-        }
-
-        // 마이페이지 버튼 클릭 시
-        myPageBtn = findViewById(R.id.btn_mypage)
-        myPageBtn.setOnClickListener {
-            Log.d("logC", identifyPw.toString())
-            if(identifyId && identifyPw) {
-                val profileIntent = Intent(this@MainActivity, MyPageActivity::class.java)   // 로그인 되어 있을 시, 내 정보 값 던지면서 개인페이지로 이동
-                startActivity(profileIntent)
-                right()
-            } else {
-                Toast.makeText(this@MainActivity, "로그인 페이지로 이동합니다.", Toast.LENGTH_SHORT).show() // 로그인 안 돼 있을 경우, 개인페이지로 이동
-                val loginIntent = Intent(this@MainActivity, LoginActivity::class.java)
-                startActivity(loginIntent)
-                right()
+            if (userMap.isEmpty()){
+                init()
             }
-        }
 
-        //프로필 사진 이미지뷰 클릭 시
-        ivCamera = findViewById(R.id.Iv_camera)
-        ivCamera.setOnClickListener {
-            if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
-                openGallery()
-            } else {
-                requestPermissionLauncher.launch(android.Manifest.permission.READ_EXTERNAL_STORAGE)
-                right()
-            }
-        }
-
-
-        // 유저별 스토리 클릭시
-        IvDetail1 = findViewById(R.id.Iv_detail1)
-        IvDetail2 = findViewById(R.id.Iv_detail2)
-        IvDetail3 = findViewById(R.id.Iv_detail3)
-        IvDetail4 = findViewById(R.id.Iv_detail4)
-
-        val storyList = listOf(IvDetail1, IvDetail2, IvDetail3, IvDetail4)
-        storyList.forEach { story ->
-            story.setOnClickListener {
-                val detailPage = Intent(this@MainActivity, DetailPageActivity::class.java)   // 로그인 되어 있을 시, 내 정보 값 던지면서 개인페이지로 이동
-                when (story) {
-                    IvDetail1 -> detailPage.putExtra("userId", "강현정")
-                    IvDetail2 -> detailPage.putExtra("userId", "서해윤")
-                    IvDetail3 -> detailPage.putExtra("userId", "bonggyulim")
-                    IvDetail4 -> detailPage.putExtra("userId", "장혜정")
+            // 마이페이지 버튼 클릭 시
+            myPageBtn = findViewById(R.id.btn_mypage)
+            myPageBtn.setOnClickListener {
+                Log.d("logC", identifyPw.toString())
+                if(identifyId && identifyPw) {
+                    val profileIntent = Intent(this@MainActivity, MyPageActivity::class.java)   // 로그인 되어 있을 시, 내 정보 값 던지면서 개인페이지로 이동
+                    startActivity(profileIntent)
+                    right()
+                } else {
+                    Toast.makeText(this@MainActivity, "로그인 페이지로 이동합니다.", Toast.LENGTH_SHORT).show() // 로그인 안 돼 있을 경우, 개인페이지로 이동
+                    val loginIntent = Intent(this@MainActivity, LoginActivity::class.java)
+                    startActivity(loginIntent)
+                    right()
                 }
-                startActivity(detailPage)
+            }
+
+            //프로필 사진 이미지뷰 클릭 시
+            ivCamera = findViewById(R.id.Iv_camera)
+            ivCamera.setOnClickListener {
+                if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+                    openGallery()
+                } else {
+                    requestPermissionLauncher.launch(android.Manifest.permission.READ_EXTERNAL_STORAGE)
+                    right()
+                }
+            }
+
+
+            // 유저별 스토리 클릭시
+            IvDetail1 = findViewById(R.id.Iv_detail1)
+            IvDetail2 = findViewById(R.id.Iv_detail2)
+            IvDetail3 = findViewById(R.id.Iv_detail3)
+            IvDetail4 = findViewById(R.id.Iv_detail4)
+
+            val storyList = listOf(IvDetail1, IvDetail2, IvDetail3, IvDetail4)
+            storyList.forEach { story ->
+                story.setOnClickListener {
+                    val detailPage = Intent(this@MainActivity, DetailPageActivity::class.java)   // 로그인 되어 있을 시, 내 정보 값 던지면서 개인페이지로 이동
+                    when (story) {
+                        IvDetail1 -> detailPage.putExtra("userId", "강현정")
+                        IvDetail2 -> detailPage.putExtra("userId", "서해윤")
+                        IvDetail3 -> detailPage.putExtra("userId", "bonggyulim")
+                        IvDetail4 -> detailPage.putExtra("userId", "장혜정")
+                    }
+                    startActivity(detailPage)
+                }
+            }
+
+            //게시글부분
+            //게시글 글 더보기 관련
+            var long01 = findViewById<TextView>(R.id.long_text01)
+            var short01 = findViewById<TextView>(R.id.ddd01)
+            var long02 = findViewById<TextView>(R.id.long_text02)
+            var short02 = findViewById<TextView>(R.id.ddd02)
+            var long03 = findViewById<TextView>(R.id.long_text03)
+            var short03 = findViewById<TextView>(R.id.ddd03)
+            var long04 = findViewById<TextView>(R.id.long_text04)
+            var short04 = findViewById<TextView>(R.id.ddd04)
+
+            //게시글 사진위의 아이디 클릭시 디테일 페이지로 전환
+            //1번
+
+
+        var id01 = findViewById<TextView>(R.id.top_id01)
+        var id02 = findViewById<TextView>(R.id.top_id02)
+        var id03 = findViewById<TextView>(R.id.top_id03)
+        var id04 = findViewById<TextView>(R.id.top_id04)
+
+        val idList = listOf<TextView>(id01, id02, id03, id04)
+
+        idList.forEach { detail ->
+            detail.setOnClickListener {
+                var intent = Intent(this, DetailPageActivity::class.java)
+                intent.putExtra("userId", detail.text.toString())
+                startActivity(intent)
+                right()
             }
         }
 
-        //게시글부분
-        //게시글 글 더보기 관련
-        var long01 = findViewById<TextView>(R.id.long_text01)
-        var short01 = findViewById<TextView>(R.id.ddd01)
-        var long02 = findViewById<TextView>(R.id.long_text02)
-        var short02 = findViewById<TextView>(R.id.ddd02)
-        var long03 = findViewById<TextView>(R.id.long_text03)
-        var short03 = findViewById<TextView>(R.id.ddd03)
-        var long04 = findViewById<TextView>(R.id.long_text04)
-        var short04 = findViewById<TextView>(R.id.ddd04)
-
-        //게시글 사진위의 아이디 클릭시 디테일 페이지로 전환
-        //1번
-        var id01 = findViewById<TextView>(R.id.top_id01)
-        id01.setOnClickListener {
-            var intent = Intent(this, DetailPageActivity::class.java)
-            intent.putExtra("userId", id01.text.toString())
-            startActivity(intent)
-        }
-
-        //2번
-        var id02 = findViewById<TextView>(R.id.top_id02)
-        id02.setOnClickListener {
-            var intent = Intent(this, DetailPageActivity::class.java)
-            intent.putExtra("userId", id02.text.toString())
-            startActivity(intent)
-        }
-
-        //3번
-        var id03 = findViewById<TextView>(R.id.top_id03)
-        id03.setOnClickListener {
-            var intent = Intent(this, DetailPageActivity::class.java)
-            intent.putExtra("userId", id03.text.toString())
-            startActivity(intent)
-        }
-
-        //4번
-        var id04 = findViewById<TextView>(R.id.top_id04)
-        id04.setOnClickListener {
-            var intent = Intent(this, DetailPageActivity::class.java)
-            intent.putExtra("userId", id04.text.toString())
-            startActivity(intent)
-        }
 
 
-        //더보기 기능 실행
-        setViewMore(long01, short01)
-        setViewMore(long02, short02)
-        setViewMore(long03, short03)
-        setViewMore(long04, short04)
+
+            //더보기 기능 실행
+            setViewMore(long01, short01)
+            setViewMore(long02, short02)
+            setViewMore(long03, short03)
+            setViewMore(long04, short04)
 
 
     }
