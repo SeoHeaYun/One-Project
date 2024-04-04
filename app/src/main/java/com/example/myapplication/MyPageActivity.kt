@@ -45,7 +45,6 @@ class MyPageActivity : AppCompatActivity() {
             }
         }
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_page)
@@ -118,7 +117,6 @@ class MyPageActivity : AppCompatActivity() {
         userName2.text = loginInfo
         userMap[loginInfo]?.postImage?.let { postImage2.setImageResource(it[1]) }
         postWriting2.text = userMap[loginInfo]?.postWriting?.get(1)
-
 
     }
 }

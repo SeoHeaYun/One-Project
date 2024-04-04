@@ -10,13 +10,10 @@ import android.widget.Toast
 
 
 
-val getUserId = MemberManger.getUserIdList()
-val getUserPw = MemberManger.getUserPwList()
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-
         val id = findViewById<EditText>(R.id.etv_id)
         val pw = findViewById<EditText>(R.id.etv_password)
         val login = findViewById<Button>(R.id.btn_login)
@@ -39,6 +36,8 @@ class LoginActivity : AppCompatActivity() {
 
         // 로그인 버튼
         login.setOnClickListener {
+            val getUserId = MemberManger.getUserIdList()
+            val getUserPw = MemberManger.getUserPwList()
             Log.d("logA", MemberManger.memberList.toString())
             Log.d("logB", getUserId.toString())
             if (id.text.isBlank() || pw.text.isBlank()) {   // 문자열이 없거나, 공백으로 이루어진 경우

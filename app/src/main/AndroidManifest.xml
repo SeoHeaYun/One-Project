@@ -4,8 +4,7 @@
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
         android:maxSdkVersion="32" />
-
-
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
 
 
     <application
@@ -26,17 +25,17 @@
             android:name=".MyPageActivity"
             android:exported="false" />
 
+
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
         <activity
             android:name=".SignActivity"
             android:windowSoftInputMode="adjustPan|stateHidden"
             android:exported="false"/>
         <activity
-            android:name=".LoginActivity"
-            android:windowSoftInputMode="adjustPan|stateHidden"
-            android:exported="false"/>
-
-        <activity
             android:name=".MainActivity"
+            android:windowSoftInputMode="adjustPan|stateHidden"
             android:exported="true">
 
 
@@ -45,6 +44,8 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
     </application>
+
 </manifest>
