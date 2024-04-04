@@ -1,6 +1,6 @@
 <resources>
 
-    <string name="app_name">My Application</string>
+    <string name="app_name">One_Stagram</string>
     <string name="en_my_page">My page</string>
     <string name="kr_my_page">마이페이지</string>
     <string name="en_name">Name : </string>
@@ -42,14 +42,13 @@
             zsdfasdfadfadsfasdfadsfasdfasdfasdfflahdfasdfadsfasdfasdfasdfasldkjfhalksdjhfkajdshfljahdfkjahdslfjkahd
         asdfkhakdjfha;skdhfahdsfkjahdsljfkhalksjdhfljkadshflkjahsdflkjahdskljf
         asdfasdfasdfasdfasdhasdlkfhasdkjhfaljdsflakjsdf</string>
-    <string name="long_text04">4 안녕하세요 저는 장혜정입니다. asaaaaaaaaaaaaaaaaaaasadjsdhgdsflaugasdfasdfadfsdfaskdjfladkhkahdlfkjhadskf
-            zsdfasdfadfadsfasdfadsfasdfasdfasdfflahdfasdfadsfasdfasdfasdfasldkjfhalksdjhfkajdshfljahdfkjahdslfjkahd
-        asdfkhakdjfha;skdhfahdsfkjahdsljfkhalksjdhfljkadshflkjahsdflkjahdskljf
-        asdfasdfasdfasdfasdhasdlkfhasdkjhfaljdsflakjsdf</string>
+    <string name="long_text04">안녕하세요 제 이름은 장혜정입니다. 저의 mbti는 isfj입니다. 제가 가장 좋아하는 음식은 햄버거이며,
+        브랜드 중에서는 버거킹을 좋아합니다. 그리고 저의 취미생활은 풍경 사진 찍기입니다.
+        밖에서 멋진 곳을 보고 사진 찍는 것이 삶의 낙인 것 같습니다.</string>
 
     <string name="id_text01">1번 서해윤</string>
     <string name="id_text02">2번 강현정</string>
     <string name="id_text03">3번 임봉규</string>
-    <string name="id_text04">4번 장혜정</string>
+    <string name="id_text04">hyejeong</string>
 
 </resources>
