@@ -1,12 +1,12 @@
 package com.example.myapplication
 
-import android.Manifest
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.provider.MediaStore
+import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
@@ -17,12 +17,14 @@ import androidx.core.content.ContextCompat
 import com.example.myapplication.MemberManger.init
 import com.example.myapplication.MemberManger.userMap
 
-val userId = MemberManger.getUserIdList()  // ctrl click 하면 함수 설명이 있습니다.
-val userPw = MemberManger.getUserPwList()
-var identifyId = false // 입력한 Id가 회원가입한 정보 즉, UserData에 있는 Id와 동일한지 식별
-var identifyPw = false // 둘다 true 여야 마이페이지로 이동가능
+
+
+lateinit var myPageBtn: ImageView // 모든 페이지 좌측 상단에 있는 홈버튼
+lateinit var homeIntent: Intent
+var identifyId = false // ID,PW 입력값과 UserData 리스트값과 일치하는지 비교 -> 둘다 true 여야 로그인&마이페이지 진입가능
+var identifyPw = false
+
 class MainActivity : AppCompatActivity() {
-    private lateinit var myPageBtn: ImageView
     private lateinit var ivCamera: ImageView
     private lateinit var IvDetail1: ImageView
     private lateinit var IvDetail2: ImageView
@@ -56,30 +58,34 @@ class MainActivity : AppCompatActivity() {
         if (userMap.isEmpty()){
             init()
         }
-        // 마이페이지 버튼 클릭 시`
+
         // 마이페이지 버튼 클릭 시
         myPageBtn = findViewById(R.id.btn_mypage)
         myPageBtn.setOnClickListener {
+            Log.d("logC", identifyPw.toString())
             if(identifyId && identifyPw) {
                 val profileIntent = Intent(this@MainActivity, MyPageActivity::class.java)   // 로그인 되어 있을 시, 내 정보 값 던지면서 개인페이지로 이동
-                intent.putExtra("myname", userId.last().toString())
                 startActivity(profileIntent)
+                right()
             } else {
-                Toast.makeText(this@MainActivity, "로그인 페이지로 이동합니다.", Toast.LENGTH_SHORT).show()
-                val loginIntent = Intent(this@MainActivity, LoginActivity::class.java) // 로그인 안되어 있을 시, 로그인 페이지로 이동
+                Toast.makeText(this@MainActivity, "로그인 페이지로 이동합니다.", Toast.LENGTH_SHORT).show() // 로그인 안 돼 있을 경우, 개인페이지로 이동
+                val loginIntent = Intent(this@MainActivity, LoginActivity::class.java)
                 startActivity(loginIntent)
+                right()
             }
         }
 
         //프로필 사진 이미지뷰 클릭 시
         ivCamera = findViewById(R.id.Iv_camera)
         ivCamera.setOnClickListener {
-            if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+            if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
                 openGallery()
             } else {
-                requestPermissionLauncher.launch(Manifest.permission.READ_EXTERNAL_STORAGE)
+                requestPermissionLauncher.launch(android.Manifest.permission.READ_EXTERNAL_STORAGE)
+                right()
             }
         }
+
 
         // 유저별 스토리 클릭시
         IvDetail1 = findViewById(R.id.Iv_detail1)
@@ -92,10 +98,10 @@ class MainActivity : AppCompatActivity() {
             story.setOnClickListener {
                 val detailPage = Intent(this@MainActivity, DetailPageActivity::class.java)   // 로그인 되어 있을 시, 내 정보 값 던지면서 개인페이지로 이동
                 when (story) {
-                    IvDetail1 -> intent.putExtra("userId", "강현정")
-                    IvDetail2 -> intent.putExtra("userId", "서해윤")
-                    IvDetail3 -> intent.putExtra("userId", "bonggyulim")
-                    IvDetail4 -> intent.putExtra("userId", "장혜정")
+                    IvDetail1 -> detailPage.putExtra("userId", "강현정")
+                    IvDetail2 -> detailPage.putExtra("userId", "서해윤")
+                    IvDetail3 -> detailPage.putExtra("userId", "bonggyulim")
+                    IvDetail4 -> detailPage.putExtra("userId", "장혜정")
                 }
                 startActivity(detailPage)
             }
@@ -112,12 +118,39 @@ class MainActivity : AppCompatActivity() {
         var long04 = findViewById<TextView>(R.id.long_text04)
         var short04 = findViewById<TextView>(R.id.ddd04)
 
+        //게시글 사진위의 아이디 클릭시 디테일 페이지로 전환
+        //1번
         var id01 = findViewById<TextView>(R.id.top_id01)
         id01.setOnClickListener {
-            var intent = Intent(this,DetailPageActivity::class.java)
-            intent.putExtra("userId",id01.text.toString())
+            var intent = Intent(this, DetailPageActivity::class.java)
+            intent.putExtra("userId", id01.text.toString())
             startActivity(intent)
         }
+
+        //2번
+        var id02 = findViewById<TextView>(R.id.top_id02)
+        id02.setOnClickListener {
+            var intent = Intent(this, DetailPageActivity::class.java)
+            intent.putExtra("userId", id02.text.toString())
+            startActivity(intent)
+        }
+
+        //3번
+        var id03 = findViewById<TextView>(R.id.top_id03)
+        id03.setOnClickListener {
+            var intent = Intent(this, DetailPageActivity::class.java)
+            intent.putExtra("userId", id03.text.toString())
+            startActivity(intent)
+        }
+
+        //4번
+        var id04 = findViewById<TextView>(R.id.top_id04)
+        id04.setOnClickListener {
+            var intent = Intent(this, DetailPageActivity::class.java)
+            intent.putExtra("userId", id04.text.toString())
+            startActivity(intent)
+        }
+
 
         //더보기 기능 실행
         setViewMore(long01, short01)
@@ -125,10 +158,12 @@ class MainActivity : AppCompatActivity() {
         setViewMore(long03, short03)
         setViewMore(long04, short04)
 
+
     }
     private fun openGallery() {
         val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
         pickImageLauncher.launch(gallery)
+        right()
     }
 
     //더보기 기능

@@ -3,9 +3,11 @@ package com.example.myapplication
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import com.example.myapplication.MemberManger.userMap
+
 
 class DetailPageActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -13,12 +15,14 @@ class DetailPageActivity : AppCompatActivity() {
         setContentView(R.layout.activity_detail_page)
 
         val userId = intent.getStringExtra("userId")
+        Log.d("userId", "userId: "+userId.toString())
 
-        // mainActivity로 이동하는 버튼
-        val btnHome = findViewById<ImageView>(R.id.btn_home)
-        btnHome.setOnClickListener{
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+        // 좌측 상단 home 버튼 클릭
+        myPageBtn = findViewById(R.id.btn_home)
+        myPageBtn.setOnClickListener {
+            homeIntent = Intent(this@DetailPageActivity, MainActivity::class.java)
+            startActivity(homeIntent)
+            left()
         }
 
         // 유저정보 출력
@@ -38,7 +42,7 @@ class DetailPageActivity : AppCompatActivity() {
         }
 
         // 첫번째 게시글의 이름, 이미지, 글
-        val userName1 = findViewById<TextView>(R.id.userName1)
+/*        val userName1 = findViewById<TextView>(R.id.userName1)
         val postImage1 = findViewById<ImageView>(R.id.post_image1)
         val postWriting1 = findViewById<TextView>(R.id.post_writing1)
 
@@ -53,6 +57,6 @@ class DetailPageActivity : AppCompatActivity() {
 
         userName2.text = userId
         userMap[userId]?.postImage?.let { postImage2.setImageResource(it.get(1)) }
-        postWriting2.text = userMap[userId]?.postWriting?.get(1)
+        postWriting2.text = userMap[userId]?.postWriting?.get(1)*/
     }
 }
