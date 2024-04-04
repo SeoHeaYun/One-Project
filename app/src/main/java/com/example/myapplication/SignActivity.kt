@@ -1,13 +1,17 @@
 package com.example.myapplication
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.example.myapplication.MemberManger.memberList
 import java.util.regex.Pattern
+
 
 class SignActivity : AppCompatActivity() {
 
@@ -21,6 +25,14 @@ class SignActivity : AppCompatActivity() {
         val signup = findViewById<Button>(R.id.btn_realsignup)
         val doublecheck = findViewById<Button>(R.id.btn_double_check)
         val getUserId = MemberManger.getUserIdList()
+
+        // 좌측 상단 home 버튼 클릭
+        myPageBtn = findViewById(R.id.btn_home)
+        myPageBtn.setOnClickListener {
+            homeIntent = Intent(this@SignActivity, MainActivity::class.java)
+            startActivity(homeIntent)
+            left()
+        }
 
         // 아이디 중복체크 버튼
         doublecheck.setOnClickListener {
@@ -36,7 +48,7 @@ class SignActivity : AppCompatActivity() {
             if (signupname.text.isBlank() || signupid.text.isBlank() || signuppw.text.isBlank()) {
                 Toast.makeText(this@SignActivity, "입력되지 않은 정보가 있습니다.", Toast.LENGTH_SHORT).show()
             } else {
-                MemberManger.addMember(signupid.text.toString(), signuppw.text.toString())
+                MemberManger.addMember(signupid.text.toString(), signuppw.text.toString())   // 회원 추가
                 Toast.makeText(this@SignActivity, "회원가입이 완료되었습니다!", Toast.LENGTH_SHORT).show()
                 finish()
             }
