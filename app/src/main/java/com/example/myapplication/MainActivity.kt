@@ -97,7 +97,7 @@ class MainActivity : AppCompatActivity() {
                 story.setOnClickListener {
                     val detailPage = Intent(this@MainActivity, DetailPageActivity::class.java)   // 로그인 되어 있을 시, 내 정보 값 던지면서 개인페이지로 이동
                     when (story) {
-                        IvDetail1 -> detailPage.putExtra("userId", "강현정")
+                        IvDetail1 -> detailPage.putExtra("userId", "bandal04")
                         IvDetail2 -> detailPage.putExtra("userId", "서해윤")
                         IvDetail3 -> detailPage.putExtra("userId", "bonggyulim")
                         IvDetail4 -> detailPage.putExtra("userId", "장혜정")
