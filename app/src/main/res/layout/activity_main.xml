@@ -10,7 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-
         <ImageView
             android:id="@+id/btn_home"
             android:layout_width="wrap_content"
@@ -120,7 +119,7 @@
 
         </HorizontalScrollView>
 
-<!-- 게시글 -->
+        <!-- 게시글 -->
         <TextView
             android:id="@+id/tv_line01"
             android:layout_width="match_parent"
@@ -141,7 +140,6 @@
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_line01" />
-
 
         <TextView
             android:id="@+id/tv_line02"
@@ -182,7 +180,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_line03" />
 
-
         <TextView
             android:id="@+id/long_text01"
             android:layout_width="match_parent"
@@ -211,7 +208,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/long_text01" />
 
-
         <!--2 번째-->
         <TextView
             android:id="@+id/tv_line04"
@@ -233,7 +229,6 @@
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_line04" />
-
 
         <TextView
             android:id="@+id/tv_line05"
@@ -274,7 +269,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_line06" />
 
-
         <TextView
             android:id="@+id/long_text02"
             android:layout_width="match_parent"
@@ -303,7 +297,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/long_text02" />
 
-    <!--3 번째-->
+        <!--3 번째-->
         <TextView
             android:id="@+id/tv_line07"
             android:layout_width="match_parent"
@@ -324,7 +318,6 @@
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_line07" />
-
 
         <TextView
             android:id="@+id/tv_line08"
@@ -365,7 +358,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_line09" />
 
-
         <TextView
             android:id="@+id/long_text03"
             android:layout_width="match_parent"
@@ -394,7 +386,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/long_text03" />
 
-    <!--4 번째-->
+        <!--4 번째-->
         <TextView
             android:id="@+id/tv_line10"
             android:layout_width="match_parent"
@@ -415,7 +407,6 @@
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_line10" />
-
 
         <TextView
             android:id="@+id/tv_line11"
@@ -456,7 +447,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_line12" />
 
-
         <TextView
             android:id="@+id/long_text04"
             android:layout_width="match_parent"
@@ -485,6 +475,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/long_text04"
             android:paddingBottom="50dp"/>
-        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>
