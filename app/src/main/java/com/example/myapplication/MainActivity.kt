@@ -17,7 +17,7 @@ import androidx.core.content.ContextCompat
 import com.example.myapplication.MemberManger.init
 import com.example.myapplication.MemberManger.userMap
 
-
+// 테스트
 
 lateinit var myPageBtn: ImageView // 모든 페이지 좌측 상단에 있는 홈버튼
 lateinit var homeIntent: Intent
