@@ -12,6 +12,7 @@ import android.widget.TextView
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import com.example.myapplication.MemberManger.userMap
 
 class MyPageActivity : AppCompatActivity() {
     private lateinit var profileImage: ImageView
@@ -28,6 +29,7 @@ class MyPageActivity : AppCompatActivity() {
                     "image/*"
                 )
                 pickImageLauncher.launch(intent)
+                right()
             }
         }
 
@@ -48,6 +50,14 @@ class MyPageActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_page)
 
+        // 좌측 상단 home 버튼 클릭
+        myPageBtn = findViewById(R.id.btn_home)
+        myPageBtn.setOnClickListener {
+            homeIntent = Intent(this@MyPageActivity, MainActivity::class.java)
+            startActivity(homeIntent)
+            left()
+        }
+
         // 로그인 정보로 프로필 정보 가져오기
         loginInfo = intent.getStringExtra("loginInfo").toString()
         val name = findViewById<EditText>(R.id.content_name)
@@ -62,13 +72,14 @@ class MyPageActivity : AppCompatActivity() {
         // 수정하기 버튼
         val btnRevise = findViewById<Button>(R.id.btn_revise)
         btnRevise.setOnClickListener {
-            val userRevise = UserInfo(
+            val userRevise = MemberManger.UserInfo(
                 name.text.toString(),
                 mbti.text.toString(),
                 thoughts.text.toString(),
                 imageUri,
                 userMap[loginInfo]?.postImage,
-                userMap[loginInfo]?.postWriting)
+                userMap[loginInfo]?.postWriting
+            )
 
             userMap[loginInfo] = userRevise
         }
@@ -79,12 +90,6 @@ class MyPageActivity : AppCompatActivity() {
             profileImage.setImageResource(R.drawable.defaultprofile)
         }
 
-        // mainActivity로 이동하는 버튼
-        val btnHome = findViewById<ImageView>(R.id.btn_home)
-        btnHome.setOnClickListener{
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        }
 
         // 프로필 사진 변경하는 버튼(버전에 따라 선택)
         val btnProfileChange = findViewById<Button>(R.id.btn_profile_change)

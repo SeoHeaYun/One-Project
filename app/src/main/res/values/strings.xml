@@ -1,6 +1,5 @@
 <resources>
 
-    <string name="app_name">My Application</string>
     <string name="en_my_page">My page</string>
     <string name="kr_my_page">마이페이지</string>
     <string name="en_name">Name : </string>

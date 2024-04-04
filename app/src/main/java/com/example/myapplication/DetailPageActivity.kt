@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import com.example.myapplication.MemberManger.userMap
 
 
 class DetailPageActivity : AppCompatActivity() {
@@ -14,11 +15,12 @@ class DetailPageActivity : AppCompatActivity() {
 
         val userId = intent.getStringExtra("userId")
 
-        // mainActivity로 이동하는 버튼
-        val btnHome = findViewById<ImageView>(R.id.btn_home)
-        btnHome.setOnClickListener{
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+        // 좌측 상단 home 버튼 클릭
+        myPageBtn = findViewById(R.id.btn_home)
+        myPageBtn.setOnClickListener {
+            homeIntent = Intent(this@DetailPageActivity, MainActivity::class.java)
+            startActivity(homeIntent)
+            left()
         }
 
         // 유저정보 출력
