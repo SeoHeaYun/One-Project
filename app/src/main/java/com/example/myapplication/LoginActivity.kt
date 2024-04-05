@@ -25,6 +25,7 @@ class LoginActivity : AppCompatActivity() {
             homeIntent = Intent(this@LoginActivity, MainActivity::class.java)
             startActivity(homeIntent)
             left()
+            finish()
         }
 
         // 회원가입 페이지로 이동하는 버튼

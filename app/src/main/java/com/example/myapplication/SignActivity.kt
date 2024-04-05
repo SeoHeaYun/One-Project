@@ -32,6 +32,7 @@ class SignActivity : AppCompatActivity() {
             homeIntent = Intent(this@SignActivity, MainActivity::class.java)
             startActivity(homeIntent)
             left()
+            finish()
         }
 
         // 아이디 중복체크 버튼
