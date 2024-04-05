@@ -96,20 +96,20 @@ class MyPageActivity : AppCompatActivity() {
         }
 
         // 첫번째 게시글의 이름, 이미지, 글
-        val userName1 = findViewById<EditText>(R.id.userName1)
+        val userName1 = findViewById<TextView>(R.id.userName1)
         val postImage1 = findViewById<ImageView>(R.id.post_image1)
         val postWriting1 = findViewById<EditText>(R.id.post_writing1)
 
-        userName1.setText(loginInfo)
+        userName1.text = loginInfo
         userMap[loginInfo]?.postImage?.let { postImage1.setImageResource(it[0]) }
         postWriting1.setText(userMap[loginInfo]?.postWriting?.get(0))
 
         // 두번째 게시글의 이름, 이미지, 글
-        val userName2 = findViewById<EditText>(R.id.userName2)
+        val userName2 = findViewById<TextView>(R.id.userName2)
         val postImage2 = findViewById<ImageView>(R.id.post_image2)
         val postWriting2 = findViewById<EditText>(R.id.post_writing2)
 
-        userName2.setText(loginInfo)
+        userName2.text = loginInfo
         userMap[loginInfo]?.postImage?.let { postImage2.setImageResource(it[1]) }
         postWriting2.setText(userMap[loginInfo]?.postWriting?.get(1))
 
