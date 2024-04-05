@@ -5,11 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import com.example.myapplication.MemberManger.memberList
 import java.util.regex.Pattern
 
 
@@ -48,9 +46,10 @@ class SignActivity : AppCompatActivity() {
             if (signupname.text.isBlank() || signupid.text.isBlank() || signuppw.text.isBlank()) {
                 Toast.makeText(this@SignActivity, "입력되지 않은 정보가 있습니다.", Toast.LENGTH_SHORT).show()
             } else {
-                MemberManger.addMember(signupid.text.toString(), signuppw.text.toString())   // 회원 추가
+                MemberManger.addMember(signupname.text.toString(),signupid.text.toString(), signuppw.text.toString())   // 회원 추가
                 Toast.makeText(this@SignActivity, "회원가입이 완료되었습니다!", Toast.LENGTH_SHORT).show()
                 finish()
+                left()
             }
         }
 

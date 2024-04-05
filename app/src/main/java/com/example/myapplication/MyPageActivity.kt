@@ -21,12 +21,14 @@ import com.example.myapplication.MemberManger.userMap
 import java.util.Locale
 
 class MyPageActivity : AppCompatActivity() {
-    private lateinit var profileImage: ImageView
+
     private lateinit var loginInfo: String
     private lateinit var korean: RadioButton
     private lateinit var english: RadioButton
     private lateinit var languageCode: String
+    private lateinit var profileImage: ImageView
     private var imageUri: Uri? = null
+
 
     // 갤러리 열기
     private val requestPermissionLauncher: ActivityResultLauncher<String> =
@@ -58,6 +60,7 @@ class MyPageActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_page)
 
+
         // 좌측 상단 home 버튼 클릭
         myPageBtn = findViewById(R.id.btn_home)
         myPageBtn.setOnClickListener {
@@ -67,15 +70,58 @@ class MyPageActivity : AppCompatActivity() {
         }
 
         // 로그인 정보로 프로필 정보 가져오기
-        loginInfo = intent.getStringExtra("loginInfo").toString()
+
+        profileImage = findViewById(R.id.img_profile)
         val name = findViewById<EditText>(R.id.content_name)
         val mbti = findViewById<EditText>(R.id.content_mbti)
         val thoughts = findViewById<EditText>(R.id.content_thoughts)
+        val userName1 = findViewById<TextView>(R.id.userName1)
+        val userName2 = findViewById<TextView>(R.id.userName2)
+        val postImage1 = findViewById<ImageView>(R.id.my_post_image1)
+        val postImage2 = findViewById<ImageView>(R.id.my_post_image2)
+        val postWriting1 = findViewById<TextView>(R.id.post_writing1)
+        val postWriting2 = findViewById<TextView>(R.id.post_writing2)
 
-        name.setText(userMap[loginInfo]?.userName)
-        mbti.setText(userMap[loginInfo]?.userMbti)
-        thoughts.setText(userMap[loginInfo]?.userThoughts)
-        profileImage = findViewById(R.id.img_profile)
+        loginInfo = intent.getStringExtra("name").toString()
+        when(loginInfo) {
+            "강현정" -> {
+                name.setText("강현정")
+                mbti.setText("ISTP")
+                thoughts.setText("첫 프로젝트 즐거웠습니다!")
+                postImage1.setImageResource(R.drawable.user1_post2)
+                postImage2.setImageResource(R.drawable.user1_post1)
+            }
+
+            "서해윤" -> {
+                name.setText("서해윤")
+                mbti.setText("ENFJ")
+                thoughts.setText("첫 프로젝트 즐거웠습니다!")
+                postImage1.setImageResource(R.drawable.top)
+                postImage2.setImageResource(R.drawable.cloud)
+                userName1.setText("@Westcoast_yun")
+                userName2.setText("@Westcoast_yun")
+                postWriting1.setText("행복한 하루!")
+                postWriting2.setText("바람이 분다.")
+            }
+
+            "임봉규" -> {
+                name.setText("임봉규")
+                mbti.setText("INTP")
+                thoughts.setText("첫 프로젝트 즐거웠습니다!")
+                postImage1.setImageResource(R.drawable.user3_post1)
+                postImage2.setImageResource(R.drawable.user1_post2)
+            }
+
+            "장혜정" -> {
+                name.setText("강현정")
+                mbti.setText("ISFJ")
+                thoughts.setText("첫 프로젝트 즐거웠습니다!")
+                postImage1.setImageResource(R.drawable.user4_post1)
+                postImage2.setImageResource(R.drawable.user2_post1)
+            }
+        }
+
+
 
         // 수정하기 버튼
         val btnRevise = findViewById<Button>(R.id.btn_revise)
@@ -109,23 +155,6 @@ class MyPageActivity : AppCompatActivity() {
             }
         }
 
-        // 첫번째 게시글의 이름, 이미지, 글
-        val userName1 = findViewById<TextView>(R.id.userName1)
-        val postImage1 = findViewById<ImageView>(R.id.post_image1)
-        val postWriting1 = findViewById<TextView>(R.id.post_writing1)
-
-        userName1.text = loginInfo
-        userMap[loginInfo]?.postImage?.let { postImage1.setImageResource(it[0]) }
-        postWriting1.text = userMap[loginInfo]?.postWriting?.get(0)
-
-        // 두번째 게시글의 이름, 이미지, 글
-        val userName2 = findViewById<TextView>(R.id.userName2)
-        val postImage2 = findViewById<ImageView>(R.id.post_image2)
-        val postWriting2 = findViewById<TextView>(R.id.post_writing2)
-
-        userName2.text = loginInfo
-        userMap[loginInfo]?.postImage?.let { postImage2.setImageResource(it[1]) }
-        postWriting2.text = userMap[loginInfo]?.postWriting?.get(1)
 
 
         // 다국어지원

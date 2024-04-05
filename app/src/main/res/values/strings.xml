@@ -27,27 +27,20 @@
     </string>
 
 
-    <string name="long_text01" translatable="false">1 안녕하세요 저는 서해윤입니다.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</string>
-    <string name="long_text02" translatable="false">2 안녕하세요 저는 강현정입니다. asaaaaaaaaaaaaaaaaaaasadjsdhgdsflaugasdfasdfadfsdfaskdjfladkhkahdlfkjhadskf
-            zsdfasdfadfadsfasdfadsfasdfasdfasdfflahdfasdfadsfasdfasdfasdfasldkjfhalksdjhfkajdshfljahdfkjahdslfjkahd
-        asdfkhakdjfha;skdhfahdsfkjahdsljfkhalksjdhfljkadshflkjahsdflkjahdskljf
-        asdfasdfasdfasdfasdhasdlkfhasdkjhfaljdsflakjsdf</string>
-    <string name="long_text03" translatable="false">3 안녕하세요 저는 임봉규입니다. asaaaaaaaaaaaaaaaaaaasadjsdhgdsflaugasdfasdfadfsdfaskdjfladkhkahdlfkjhadskf
-            zsdfasdfadfadsfasdfadsfasdfasdfasdfflahdfasdfadsfasdfasdfasdfasldkjfhalksdjhfkajdshfljahdfkjahdslfjkahd
-        asdfkhakdjfha;skdhfahdsfkjahdsljfkhalksjdhfljkadshflkjahsdflkjahdskljf
-        asdfasdfasdfasdfasdhasdlkfhasdkjhfaljdsflakjsdf</string>
+    <string name="long_text01" translatable="false"> 안녕하세요. 안드로이드 3기 강현정입니다. 이번 원스타그램 프로젝트에서 혜정님과 메인페이지를 담당했습니다. 여러 팀 프로젝트를 통해 개발 역량을 키우는 것이 목표입니다.</string>
+    <string name="long_text02" translatable="false"> 안녕하세요! 안드로이드 3기 서해윤이라고 합니다! 첫 프로젝트이지만 팀원들이 함께 잘 도와준 덕분에 무사히 마무리할 수 있었습니다. 아직 많이 부족하지만 끈기있게 마무리하겠습니다.</string>
+    <string name="long_text03" translatable="false"> 안녕하세요. 저는 임봉규라고 합니다.</string>
+    <string name="long_text04" translatable="false"> 안녕하세요 제 이름은 장혜정입니다. 저의 mbti는 isfj입니다. 제가 가장 좋아하는 음식은 햄버거이며,브랜드 중에서는 버거킹을 좋아합니다. 그리고 저의 취미생활은 풍경 사진 찍기입니다.밖에서 멋진 곳을 보고 사진 찍는 것이 삶의 낙인 것 같습니다.</string>
 
     <string name="app_name">Onestargram</string>
     <string name="kr">한글</string>
     <string name="en">영어</string>
-    <string name="long_text04" translatable="false">안녕하세요 제 이름은 장혜정입니다. 저의 mbti는 isfj입니다. 제가 가장 좋아하는 음식은 햄버거이며,
-        브랜드 중에서는 버거킹을 좋아합니다. 그리고 저의 취미생활은 풍경 사진 찍기입니다.
-        밖에서 멋진 곳을 보고 사진 찍는 것이 삶의 낙인 것 같습니다.</string>
 
-    <string name="id_text01" translatable="false">1번 서해윤</string>
-    <string name="id_text02" translatable="false">2번 강현정</string>
-    <string name="id_text03" translatable="false">3번 임봉규</string>
-    <string name="id_text04" translatable="false">hyejeong</string>
+
+    <string name="id_text01" translatable="false">bandal_04</string>
+    <string name="id_text02" translatable="false">westcoast_yun</string>
+    <string name="id_text03" translatable="false">Im_Bongyu</string>
+    <string name="id_text04" translatable="false">J_hyejung</string>
 
 
 </resources>

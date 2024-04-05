@@ -7,9 +7,13 @@ import android.net.Uri
 object MemberManger {
 
     // 회원가입 데이터
-    data class UserData(val userId: String, val userPw: String)
+    data class UserData(val userName: String, val userId: String, val userPw: String)
 
     val memberList = mutableListOf<UserData>()  // 회원의 id와 pw를 한 쌍으로 보관하는 리스트
+
+    fun getUserNameList(): List<String> {
+        return memberList.map { it.userName }
+    }
 
     fun getUserIdList(): List<String> {         // 위 memberList의 (id,pw) 한쌍에서 Id값만 리스트로 추출
         return memberList.map { it.userId }
@@ -19,24 +23,22 @@ object MemberManger {
         return memberList.map { it.userPw }
     }
 
-    fun addMember(id: String, pw: String) {    // 회원가입 버튼에서 활용할 메소드.
-        val newMember = UserData(id, pw)
+    fun addMember(name: String, id: String, pw: String) {    // 회원가입 버튼에서 활용할 메소드.
+        val newMember = UserData(name, id, pw)
         memberList.add(newMember)
     }
 
 
-
-
-    // 데이터 뿌리는 곳
-    var userMap= mutableMapOf<String, UserInfo>()
+    var userMap = mutableMapOf<String, UserInfo>()
     data class UserInfo(
         var userName: String,
         var userMbti: String,
         var userThoughts: String,
         var profile: Uri? = null,
         var postImage: MutableList<Int>?,
-        var postWriting: MutableList<String>?
+        var postWriting: MutableList<String>?,
     )
+
     fun init() {
         var user1postImage = mutableListOf(R.drawable.user1_post1, R.drawable.user1_post2)
         var user2postImage = mutableListOf(R.drawable.user2_post1)
@@ -48,10 +50,6 @@ object MemberManger {
         var user3postWriting = mutableListOf("안녕하세요", "다들 좋은 하루 보내세요")
         var user4postWriting = mutableListOf("안녕하세요")
 
-        var user1 = UserData("bandal04", "")
-        var user2 = UserData("서해윤", "")
-        var user3 = UserData("bonggyulim", "")
-        var user4 = UserData("장혜정", "")
 
         var user1Info = UserInfo("강현정", "ISTP", "팀원분들 모두 친절하시고 적극적이어서 첫 팀 프로젝트를 잘 마무리할 수 있었습니다.", null, user1postImage, user1postWriting)
         var user2Info = UserInfo("서해윤", "MBTI", "소감", null, user2postImage, user2postWriting)
@@ -59,12 +57,19 @@ object MemberManger {
         var user4Info = UserInfo("장혜정", "MBTI", "소감", null, user4postImage, user4postWriting)
 
 
+        var user1 = UserData("강현정", "a", "b")
+        var user2 = UserData("서해윤", "c","d")
+        var user3 = UserData("bonggyulim", "e","f")
+        var user4 = UserData("장혜정", "g","h")
+
         userMap[user1.userId] = user1Info
         userMap[user2.userId] = user2Info
         userMap[user3.userId] = user3Info
         userMap[user4.userId] = user4Info
     }
 }
+
+
 //    fun removeMember(id: String, pw: String) {  // 회원 탈퇴버튼에서 활용할 메소드
 //        val iterator = memberList.iterator()    // 안전한 리스트 순회를 위해 iterator() 활용
 //        while (iterator.hasNext()) {

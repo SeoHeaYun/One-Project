@@ -35,7 +35,7 @@ class DetailPageActivity : AppCompatActivity() {
         thoughts.text = userMap[userId]?.userThoughts
 
         //
-        val profileImage = findViewById<ImageView>(R.id.img_profile)
+        val profileImage = findViewById<ImageView>(R.id.iv_profile)
         val userProfileImage = userMap[userId]?.profile
         if (userProfileImage == null) {
             profileImage.setImageResource(R.drawable.defaultprofile)
