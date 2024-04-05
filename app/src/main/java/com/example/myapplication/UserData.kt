@@ -4,10 +4,7 @@ import android.net.Uri
 import java.util.Queue
 
 // 회원 정보 값 리스트에 넣어 보관하는 싱글톤
-
 object MemberManger {
-
-
     // 회원가입 데이터
     data class UserData(val userId: String, val userPw: String)
 
@@ -28,7 +25,7 @@ object MemberManger {
             userMbti = "MBTI",
             userThoughts = "",
             profile = null,
-            postImage = mutableListOf<Int>(R.drawable.newidimage, R.drawable.user3_post1),
+            postImage = mutableListOf<Int>(R.drawable.post_new, R.drawable.post_user1),
             postWriting = mutableListOf("안녕하세요", "좋은하루보내세요")
         )
         memberList.add(newMember)
@@ -36,7 +33,6 @@ object MemberManger {
     }
 
     var userMap= mutableMapOf<String, UserInfo>()
-
 
     // 데이터 뿌리는 곳
     data class UserInfo(
@@ -48,30 +44,29 @@ object MemberManger {
         var postWriting: MutableList<String>?
     )
     fun init() {
-        var user1postImage = mutableListOf(R.drawable.user1_post1, R.drawable.user1_post2)
-        var user2postImage = mutableListOf(R.drawable.user2_post1, R.drawable.user1_post2)
-        var user3postImage = mutableListOf(R.drawable.user3_post1, R.drawable.user3_post2)
-        var user4postImage = mutableListOf(R.drawable.user4_post1, R.drawable.user1_post2)
+        var user1postImage = mutableListOf(R.drawable.post_user1, R.drawable.post_user4)
+        var user2postImage = mutableListOf(R.drawable.post_user2, R.drawable.post_user3)
+        var user3postImage = mutableListOf(R.drawable.post_user3, R.drawable.post_user2)
+        var user4postImage = mutableListOf(R.drawable.post_user4, R.drawable.post_user1)
 
-        var user1postWriting = mutableListOf("안녕하세요", "다들 좋은 하루 보내세요")
-        var user2postWriting = mutableListOf("안녕하세요", "다들 좋은 하루 보내세요")
-        var user3postWriting = mutableListOf("안녕하세요", "다들 좋은 하루 보내세요")
-        var user4postWriting = mutableListOf("안녕하세요", "다들 좋은 하루 보내세요")
-
+        var user1postWriting = mutableListOf("안녕하세요, 안드로이드 3기 강현정입니다.\n이번 원스타그램 프로젝트에서 혜정님과 함께 메인 페이지를 담당했습니다.\n여러 팀 프로젝트를 통해 개발 역량을 키우는 것이 목표입니다.", "다들 좋은 하루 보내세요")
+        var user2postWriting = mutableListOf("안녕하세요! 안드로이드 3기 서해윤입니다.\n 첫 프로젝트이지만 팀원들이 함께 잘 도와준 덕분에 무사히 마무리할 수 있었습니다.\n아직 많이 부족하지만, 끈기있게 마무리하겠습니다:)", "다들 좋은 하루 보내세요")
+        var user3postWriting = mutableListOf("안녕하세요 제 이름은 임봉규입니다.\n첫 팀프로젝트에 감기까지 걸려서 힘들었는데\n팀원분들 모두 열심히 하신 덕분에 잘 따라갈 수 있었습니다.", "다들 좋은 하루 보내세요")
+        var user4postWriting = mutableListOf("안녕하세요 제 이름은 장혜정입니다. 저의 mbti는 isfj입니다.\n제가 가장 좋아하는 음식은 햄버거이며,\n브랜드 중에서는 버거킹을 좋아합니다.\n그리고 저의 취미생활은 풍경 사진 찍기입니다.\n밖에서 멋진 곳을 보고 사진 찍는 것이 삶의 낙인 것 같습니다.", "다들 좋은 하루 보내세요")
         var user1 = UserData("bandal03", "Aaaa123!")
-        var user2 = UserData("서해윤", "")
+        var user2 = UserData("haeyun", "haeyun00!")
         var user3 = UserData("bonggyulim", "123456**")
-        var user4 = UserData("장혜정", "")
+        var user4 = UserData("hyejeong", "aaaa1111@")
 
         memberList.add(user1)
         memberList.add(user2)
         memberList.add(user3)
         memberList.add(user4)
 
-        var user1Info = UserInfo("강현정", "ISTP", "팀원분들 모두 친절하시고 적극적이어서 첫 팀 프로젝트를 잘 마무리할 수 있었습니다.", null, user1postImage, user1postWriting)
-        var user2Info = UserInfo("서해윤", "MBTI", "소감", null, user2postImage, user2postWriting)
-        var user3Info = UserInfo("임봉규", "INTP", "안녕하세요", null, user3postImage, user3postWriting)
-        var user4Info = UserInfo("장혜정", "MBTI", "소감", null, user4postImage, user4postWriting)
+        var user1Info = UserInfo("강현정", "ISTP", "음악감상", null, user1postImage, user1postWriting)
+        var user2Info = UserInfo("서해윤", "MBTI", "독서", null, user2postImage, user2postWriting)
+        var user3Info = UserInfo("임봉규", "INTP", "게임", null, user3postImage, user3postWriting)
+        var user4Info = UserInfo("장혜정", "ISFJ", "사진찍기", null, user4postImage, user4postWriting)
 
 
         userMap[user1.userId] = user1Info
@@ -80,21 +75,4 @@ object MemberManger {
         userMap[user4.userId] = user4Info
     }
 }
-//    fun removeMember(id: String, pw: String) {  // 회원 탈퇴버튼에서 활용할 메소드
-//        val iterator = memberList.iterator()    // 안전한 리스트 순회를 위해 iterator() 활용
-//        while (iterator.hasNext()) {
-//            val user = iterator.next()
-//            if (user.userId == id && user.userPw == pw) {
-//                iterator.remove()
-//                identifyId = false // false로 되었기 때문에 개인프로필 못들어감.
-//                identifyPw = false
-//            }
-//        }
-//    }
-//}
-
-//    fun findMember(): MutableList<UserData> {    // 가입한 친구보기 (사용할지 안할지 모르겠음)
-//        return memberList
-//    }
-//}
 
