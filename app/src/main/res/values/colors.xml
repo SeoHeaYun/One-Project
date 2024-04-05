@@ -11,5 +11,6 @@
     <color name="story_stoke">#FFFFFFFF</color>
     <color name="main_color">#FFC107</color>
     <color name="back_gray">#FFF3F3F3</color>
+    <color name="post_radius">#FFE688</color>
 
 </resources>
