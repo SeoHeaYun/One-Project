@@ -20,7 +20,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginTop="10dp">
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -100,6 +101,18 @@
         </LinearLayout>
     </ScrollView>
 
+    <ImageView
+        android:id="@+id/btn_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        app:srcCompat="@drawable/ic_btn_home"
+        app:layout_constraintEnd_toStartOf="@+id/my_page"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/my_page"
         android:layout_width="wrap_content"
@@ -124,15 +137,6 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_home"
         app:layout_constraintVertical_bias="0.342" />
 
-    <TextView
-        android:id="@+id/thoughts_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:text="@string/feedback"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView"
-        app:layout_constraintStart_toEndOf="@+id/img_profile"
-        app:layout_constraintTop_toBottomOf="@+id/mbti_textview" />
 
     <TextView
         android:id="@+id/name_textview"
@@ -145,6 +149,15 @@
         app:layout_constraintStart_toEndOf="@+id/img_profile"
         app:layout_constraintTop_toBottomOf="@+id/my_page"
         app:layout_constraintVertical_chainStyle="spread" />
+    <TextView
+        android:id="@+id/content_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        app:layout_constraintBottom_toBottomOf="@+id/name_textview"
+        app:layout_constraintStart_toEndOf="@+id/name_textview"
+        app:layout_constraintTop_toTopOf="@+id/name_textview"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/mbti_textview"
@@ -155,6 +168,24 @@
         app:layout_constraintBottom_toTopOf="@+id/thoughts_textview"
         app:layout_constraintStart_toEndOf="@+id/img_profile"
         app:layout_constraintTop_toBottomOf="@+id/name_textview" />
+    <TextView
+        android:id="@+id/content_mbti"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        app:layout_constraintBottom_toBottomOf="@+id/mbti_textview"
+        app:layout_constraintStart_toEndOf="@+id/mbti_textview"
+        app:layout_constraintTop_toTopOf="@+id/mbti_textview" />
+
+    <TextView
+        android:id="@+id/thoughts_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="@string/feedback"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView"
+        app:layout_constraintStart_toEndOf="@+id/img_profile"
+        app:layout_constraintTop_toBottomOf="@+id/mbti_textview" />
 
     <TextView
         android:id="@+id/content_thoughts"
@@ -167,33 +198,10 @@
         app:layout_constraintTop_toTopOf="@+id/thoughts_textview" />
 
     <TextView
-        android:id="@+id/content_name"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="3dp"
-        app:layout_constraintBottom_toBottomOf="@+id/name_textview"
-        app:layout_constraintStart_toEndOf="@+id/name_textview"
-        app:layout_constraintTop_toTopOf="@+id/name_textview"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/content_mbti"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="3dp"
-        app:layout_constraintBottom_toBottomOf="@+id/mbti_textview"
-        app:layout_constraintStart_toEndOf="@+id/mbti_textview"
-        app:layout_constraintTop_toTopOf="@+id/mbti_textview" />
-
-    <ImageView
-        android:id="@+id/btn_home"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        app:srcCompat="@drawable/ic_btn_home"        app:layout_constraintEnd_toStartOf="@+id/my_page"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:background="@drawable/line_01"
+        app:layout_constraintTop_toBottomOf="@id/thoughts_textview"
+        android:layout_marginTop="20dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
