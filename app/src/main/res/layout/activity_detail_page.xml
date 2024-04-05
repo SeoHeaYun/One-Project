@@ -112,7 +112,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/img_profile"
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -122,7 +122,11 @@
         app:layout_constraintBottom_toTopOf="@+id/scrollView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_home"
-        app:layout_constraintVertical_bias="0.342" />
+        app:layout_constraintVertical_bias="0.342"
+        android:src="@drawable/defaultprofile"
+        app:civ_border_color="@color/story_stoke"
+        app:civ_border_overlay="true"
+        app:civ_border_width="0dp" />
 
     <TextView
         android:id="@+id/thoughts_textview"

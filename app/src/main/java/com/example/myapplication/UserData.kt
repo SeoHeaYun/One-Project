@@ -57,7 +57,7 @@ object MemberManger {
         var user3postWriting = mutableListOf("안녕하세요", "다들 좋은 하루 보내세요")
         var user4postWriting = mutableListOf("안녕하세요")
 
-        var user1 = UserData("bandal04", "")
+        var user1 = UserData("bandal03", "Aaaa123!")
         var user2 = UserData("서해윤", "")
         var user3 = UserData("bonggyulim", "123456**")
         var user4 = UserData("장혜정", "")
