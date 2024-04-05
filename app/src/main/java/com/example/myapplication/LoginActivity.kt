@@ -63,13 +63,9 @@ class LoginActivity : AppCompatActivity() {
                         this@LoginActivity,
                         "정보를 다시 입력하거나 회원가입을 완료해주세요.", Toast.LENGTH_SHORT).show()
                 }
-            }
         }
     }
-
-
-
-
+}
 
 /*
 <merge 후 추가구현 사항>

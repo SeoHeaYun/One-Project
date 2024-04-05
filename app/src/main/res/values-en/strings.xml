@@ -6,7 +6,7 @@
     <string name="sample">Hello</string>
     <string name="my_page">My Page</string>
     <string name="name">"Name : "</string>
-    <string name="feedback">"Feedback : "</string>
+    <string name="hobby">"Hobby : "</string>
     <string name="profile_change">Change profile picture</string>
     <string name="revise">Modify</string>
     <string name="detail_page">Detail Page</string>
