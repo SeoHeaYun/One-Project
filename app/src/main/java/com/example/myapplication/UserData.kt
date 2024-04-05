@@ -53,7 +53,7 @@ object MemberManger {
         var user4postImage = mutableListOf(R.drawable.user4_post1)
 
         var user1postWriting = mutableListOf("안녕하세요", "다들 좋은 하루 보내세요")
-        var user2postWriting = mutableListOf("안녕하세요")
+        var user2postWriting = mutableListOf("안녕하세요", "다들 좋은 하루 보내세요")
         var user3postWriting = mutableListOf("안녕하세요", "다들 좋은 하루 보내세요")
         var user4postWriting = mutableListOf("안녕하세요")
 
