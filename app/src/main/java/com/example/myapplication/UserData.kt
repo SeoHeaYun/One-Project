@@ -28,7 +28,7 @@ object MemberManger {
             userMbti = "MBTI",
             userThoughts = "",
             profile = null,
-            postImage = mutableListOf<Int>(R.drawable.user3_post1, R.drawable.user3_post1),
+            postImage = mutableListOf<Int>(R.drawable.newidimage, R.drawable.user3_post1),
             postWriting = mutableListOf("안녕하세요", "좋은하루보내세요")
         )
         memberList.add(newMember)
@@ -49,14 +49,14 @@ object MemberManger {
     )
     fun init() {
         var user1postImage = mutableListOf(R.drawable.user1_post1, R.drawable.user1_post2)
-        var user2postImage = mutableListOf(R.drawable.user2_post1)
+        var user2postImage = mutableListOf(R.drawable.user2_post1, R.drawable.user1_post2)
         var user3postImage = mutableListOf(R.drawable.user3_post1, R.drawable.user3_post2)
-        var user4postImage = mutableListOf(R.drawable.user4_post1)
+        var user4postImage = mutableListOf(R.drawable.user4_post1, R.drawable.user1_post2)
 
         var user1postWriting = mutableListOf("안녕하세요", "다들 좋은 하루 보내세요")
         var user2postWriting = mutableListOf("안녕하세요", "다들 좋은 하루 보내세요")
         var user3postWriting = mutableListOf("안녕하세요", "다들 좋은 하루 보내세요")
-        var user4postWriting = mutableListOf("안녕하세요")
+        var user4postWriting = mutableListOf("안녕하세요", "다들 좋은 하루 보내세요")
 
         var user1 = UserData("bandal03", "Aaaa123!")
         var user2 = UserData("서해윤", "")
