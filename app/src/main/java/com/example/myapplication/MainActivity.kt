@@ -17,8 +17,6 @@ import androidx.core.content.ContextCompat
 import com.example.myapplication.MemberManger.init
 import com.example.myapplication.MemberManger.userMap
 
-
-
 lateinit var myPageBtn: ImageView // 모든 페이지 좌측 상단에 있는 홈버튼
 lateinit var homeIntent: Intent
 var identifyId = false // ID,PW 입력값과 UserData 리스트값과 일치하는지 비교 -> 둘다 true 여야 로그인&마이페이지 진입가능
@@ -59,12 +57,15 @@ class MainActivity : AppCompatActivity() {
                 init()
             }
 
+            val loginInfo = intent.getStringExtra("loginInfo")
+
             // 마이페이지 버튼 클릭 시
             myPageBtn = findViewById(R.id.btn_mypage)
             myPageBtn.setOnClickListener {
                 Log.d("logC", identifyPw.toString())
                 if(identifyId && identifyPw) {
                     val profileIntent = Intent(this@MainActivity, MyPageActivity::class.java)   // 로그인 되어 있을 시, 내 정보 값 던지면서 개인페이지로 이동
+                    profileIntent.putExtra("loginInfo", loginInfo)
                     startActivity(profileIntent)
                     right()
                 } else {
@@ -98,7 +99,7 @@ class MainActivity : AppCompatActivity() {
                 story.setOnClickListener {
                     val detailPage = Intent(this@MainActivity, DetailPageActivity::class.java)   // 로그인 되어 있을 시, 내 정보 값 던지면서 개인페이지로 이동
                     when (story) {
-                        IvDetail1 -> detailPage.putExtra("userId", "강현정")
+                        IvDetail1 -> detailPage.putExtra("userId", "bandal04")
                         IvDetail2 -> detailPage.putExtra("userId", "서해윤")
                         IvDetail3 -> detailPage.putExtra("userId", "bonggyulim")
                         IvDetail4 -> detailPage.putExtra("userId", "장혜정")
