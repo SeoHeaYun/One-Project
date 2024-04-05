@@ -57,12 +57,15 @@ class MainActivity : AppCompatActivity() {
                 init()
             }
 
+            val loginInfo = intent.getStringExtra("loginInfo")
+
             // 마이페이지 버튼 클릭 시
             myPageBtn = findViewById(R.id.btn_mypage)
             myPageBtn.setOnClickListener {
                 Log.d("logC", identifyPw.toString())
                 if(identifyId && identifyPw) {
                     val profileIntent = Intent(this@MainActivity, MyPageActivity::class.java)   // 로그인 되어 있을 시, 내 정보 값 던지면서 개인페이지로 이동
+                    profileIntent.putExtra("loginInfo", loginInfo)
                     startActivity(profileIntent)
                     right()
                 } else {
