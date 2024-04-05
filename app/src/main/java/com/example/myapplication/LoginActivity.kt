@@ -53,7 +53,6 @@ class LoginActivity : AppCompatActivity() {
                 if (identifyId && identifyPw) {  // id,pw값 회원가입 정보와 모두 같은 경우
                     Toast.makeText(this@LoginActivity, "로그인 성공", Toast.LENGTH_SHORT).show()
                     homeIntent = Intent(this@LoginActivity, MainActivity::class.java)
-                    homeIntent.putExtra("loginInfo", id.text.toString())
                     startActivity(homeIntent)
                     right()
 

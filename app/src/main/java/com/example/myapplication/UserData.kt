@@ -22,16 +22,7 @@ object MemberManger {
 
     fun addMember(id: String, pw: String) {    // 회원가입 버튼에서 활용할 메소드.
         val newMember = UserData(id, pw)
-        val newUserInfo = UserInfo(
-            userName = "이름입력",
-            userMbti = "MBTI",
-            userThoughts = "",
-            profile = null,
-            postImage = mutableListOf<Int>(R.drawable.user3_post1, R.drawable.user3_post1),
-            postWriting = mutableListOf("안녕하세요", "좋은하루보내세요")
-        )
         memberList.add(newMember)
-        userMap[newMember.userId] = newUserInfo
     }
 
     var userMap= mutableMapOf<String, UserInfo>()
