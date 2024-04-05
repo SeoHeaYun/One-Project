@@ -18,9 +18,10 @@
     </string>
     <string name="double_check">중복체크</string>
 
-
     <string name="long_text01" translatable="false">1 안녕하세요 저는 서해윤입니다.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</string>
     <string name="long_text02" translatable="false">2 안녕하세요 저는 강현정입니다. asaaaaaaaaaaaaaaaaaaasadjsdhgdsflaugasdfasdfadfsdfaskdjfladkhkahdlfkjhadskf
+    <string name="long_text01">1 안녕하세요 저는 강현정입니다.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</string>
+    <string name="long_text02">2 안녕하세요 저는 서해윤입니다. asaaaaaaaaaaaaaaaaaaasadjsdhgdsflaugasdfasdfadfsdfaskdjfladkhkahdlfkjhadskf
             zsdfasdfadfadsfasdfadsfasdfasdfasdfflahdfasdfadsfasdfasdfasdfasldkjfhalksdjhfkajdshfljahdfkjahdslfjkahd
         asdfkhakdjfha;skdhfahdsfkjahdsljfkhalksjdhfljkadshflkjahsdflkjahdskljf
         asdfasdfasdfasdfasdhasdlkfhasdkjhfaljdsflakjsdf</string>
@@ -35,11 +36,5 @@
     <string name="long_text04" translatable="false">안녕하세요 제 이름은 장혜정입니다. 저의 mbti는 isfj입니다. 제가 가장 좋아하는 음식은 햄버거이며,
         브랜드 중에서는 버거킹을 좋아합니다. 그리고 저의 취미생활은 풍경 사진 찍기입니다.
         밖에서 멋진 곳을 보고 사진 찍는 것이 삶의 낙인 것 같습니다.</string>
-
-    <string name="id_text01" translatable="false">1번 서해윤</string>
-    <string name="id_text02" translatable="false">2번 강현정</string>
-    <string name="id_text03" translatable="false">3번 임봉규</string>
-    <string name="id_text04" translatable="false">hyejeong</string>
-
 
 </resources>
