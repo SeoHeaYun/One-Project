@@ -13,7 +13,9 @@ import android.widget.RadioButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
+import androidx.core.net.toFile
 import com.example.myapplication.MemberManger.userMap
+import java.io.File
 import java.util.Locale
 
 class MyPageActivity : AppCompatActivity() {

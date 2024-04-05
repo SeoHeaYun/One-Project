@@ -1,6 +1,7 @@
 package com.example.myapplication
 
 import android.net.Uri
+import java.util.Queue
 
 // 회원 정보 값 리스트에 넣어 보관하는 싱글톤
 
@@ -27,7 +28,7 @@ object MemberManger {
             userMbti = "MBTI",
             userThoughts = "",
             profile = null,
-            postImage = mutableListOf<Int>(R.drawable.user3_post1, R.drawable.user3_post1),
+            postImage = mutableListOf<Int>(R.drawable.newidimage, R.drawable.user3_post1),
             postWriting = mutableListOf("안녕하세요", "좋은하루보내세요")
         )
         memberList.add(newMember)
@@ -48,29 +49,29 @@ object MemberManger {
     )
     fun init() {
         var user1postImage = mutableListOf(R.drawable.user1_post1, R.drawable.user1_post2)
-        var user2postImage = mutableListOf(R.drawable.user2_post1)
+        var user2postImage = mutableListOf(R.drawable.user2_post1, R.drawable.user1_post2)
         var user3postImage = mutableListOf(R.drawable.user3_post1, R.drawable.user3_post2)
-        var user4postImage = mutableListOf(R.drawable.user4_post1)
+        var user4postImage = mutableListOf(R.drawable.user4_post1, R.drawable.user1_post2)
 
         var user1postWriting = mutableListOf("안녕하세요", "다들 좋은 하루 보내세요")
-        var user2postWriting = mutableListOf("안녕하세요")
+        var user2postWriting = mutableListOf("안녕하세요", "다들 좋은 하루 보내세요")
         var user3postWriting = mutableListOf("안녕하세요", "다들 좋은 하루 보내세요")
-        var user4postWriting = mutableListOf("안녕하세요")
+        var user4postWriting = mutableListOf("안녕하세요", "다들 좋은 하루 보내세요")
 
         var user1 = UserData("bandal03", "Aaaa123!")
         var user2 = UserData("서해윤", "")
         var user3 = UserData("bonggyulim", "123456**")
-        var user4 = UserData("장혜정", "")
+        var user4 = UserData("hyejeong", "aaaa1111@")
 
         memberList.add(user1)
         memberList.add(user2)
         memberList.add(user3)
         memberList.add(user4)
 
-        var user1Info = UserInfo("강현정", "ISTP", "팀원분들 모두 친절하시고 적극적이어서 첫 팀 프로젝트를 잘 마무리할 수 있었습니다.", null, user1postImage, user1postWriting)
+        var user1Info = UserInfo("강현정", "ISTP", "팀원분들 모두 친절하시고 적극적이어서\n 첫 팀 프로젝트를 잘 마무리할 수 있었습니다.", null, user1postImage, user1postWriting)
         var user2Info = UserInfo("서해윤", "MBTI", "소감", null, user2postImage, user2postWriting)
-        var user3Info = UserInfo("임봉규", "INTP", "안녕하세요", null, user3postImage, user3postWriting)
-        var user4Info = UserInfo("장혜정", "MBTI", "소감", null, user4postImage, user4postWriting)
+        var user3Info = UserInfo("임봉규", "INTP", "첫 팀프로젝트에 감기까지 걸려서 힘들었는데 팀원분들\n 모두 열심히 하신 덕분에 잘 따라갈 수 있었습니다.", null, user3postImage, user3postWriting)
+        var user4Info = UserInfo("장혜정", "ISFJ", "처음하는 프로젝트 팀원들\n 덕분에 잘 끝내서 다행인것같습니다.", null, user4postImage, user4postWriting)
 
 
         userMap[user1.userId] = user1Info

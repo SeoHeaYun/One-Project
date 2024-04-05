@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.content.pm.PackageManager
 import android.net.Uri
+import android.provider.ContactsContract.CommonDataKinds.Im
 import android.provider.MediaStore
 import android.util.Log
 import android.view.View
@@ -17,6 +18,8 @@ import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import com.example.myapplication.MemberManger.init
 import com.example.myapplication.MemberManger.userMap
+import java.util.LinkedList
+import java.util.Queue
 
 lateinit var myPageBtn: ImageView // 모든 페이지 좌측 상단에 있는 홈버튼
 lateinit var homeIntent: Intent
@@ -133,12 +136,20 @@ class MainActivity : AppCompatActivity() {
             //게시글 사진위의 아이디 클릭시 디테일 페이지로 전환
             //1번
 
+
         var id01 = findViewById<TextView>(R.id.top_id01)
         var id02 = findViewById<TextView>(R.id.top_id02)
         var id03 = findViewById<TextView>(R.id.top_id03)
         var id04 = findViewById<TextView>(R.id.top_id04)
 
-        val idList = listOf<TextView>(id01, id02, id03, id04)
+
+        var topId01 = findViewById<TextView>(R.id.top_id01)
+        var topId02 = findViewById<TextView>(R.id.top_id02)
+        var topId03 = findViewById<TextView>(R.id.top_id03)
+        var topId04 = findViewById<TextView>(R.id.top_id04)
+
+
+        val idList = listOf<TextView>(topId01, topId02, topId03, topId04)
 
         idList.forEach { detail ->
             detail.setOnClickListener {
@@ -149,11 +160,43 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+
         //더보기 기능 실행
         setViewMore(long01, short01)
         setViewMore(long02, short02)
         setViewMore(long03, short03)
         setViewMore(long04, short04)
+
+
+
+
+        var iv1 = findViewById<ImageView>(R.id.iv_01)
+        var iv2 = findViewById<ImageView>(R.id.iv_02)
+        var iv3 = findViewById<ImageView>(R.id.iv_03)
+        var iv4 = findViewById<ImageView>(R.id.iv_04)
+
+
+        var queue: Queue<String> = LinkedList()
+        var userlist = userMap.keys.toList()
+        Log.d("userlist", "$userlist")
+        for (i in userlist.reversed()) {
+            if (userMap[i]?.postWriting?.get(0) != null) {
+                queue.add(i)
+                queue.add(i)
+                queue.add(i)
+            }
+        }
+
+        var listTopId = mutableListOf<TextView>(topId01, topId02, topId03, topId04)
+        var listLong = mutableListOf<TextView>(long01, long02, long03, long04)
+        var listImage = mutableListOf<ImageView>(iv1, iv2, iv3, iv4)
+
+        for (i in 0..3) {
+            listTopId[i].text = queue.poll()
+            listLong[i].text = userMap[queue.poll()?.toString()]?.postWriting?.get(0)
+            userMap[queue.poll()?.toString()]?.postImage?.get(0)?.let { listImage[i].setImageResource(it) }
+        }
+
 
     }
 
@@ -167,6 +210,7 @@ class MainActivity : AppCompatActivity() {
             Glide.with(this).load(myProfileImage).into(profileImage)
         }
     }*/
+
 
     private fun openGallery() {
         val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
