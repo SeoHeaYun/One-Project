@@ -142,6 +142,7 @@ class MainActivity : AppCompatActivity() {
         var id03 = findViewById<TextView>(R.id.top_id03)
         var id04 = findViewById<TextView>(R.id.top_id04)
 
+
         var topId01 = findViewById<TextView>(R.id.top_id01)
         var topId02 = findViewById<TextView>(R.id.top_id02)
         var topId03 = findViewById<TextView>(R.id.top_id03)
@@ -159,35 +160,15 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+
         //더보기 기능 실행
         setViewMore(long01, short01)
         setViewMore(long02, short02)
         setViewMore(long03, short03)
         setViewMore(long04, short04)
 
-    }
 
-/*    override fun onRestart() {
-        super.onRestart()
-        val myProfileImage = userMap[loginInfo]?.profile
-        if (myProfileImage == null) {
-            profileImage.setImageResource(R.drawable.defaultprofile)
-        }
-        else{
-            Glide.with(this).load(myProfileImage).into(profileImage)
-        }
-    }*/
 
-            //더보기 기능 실행
-            setViewMore(long01, short01)
-            setViewMore(long02, short02)
-            setViewMore(long03, short03)
-            setViewMore(long04, short04)
-
-        var underId01 = findViewById<TextView>(R.id.under_id01)
-        var underId02 = findViewById<TextView>(R.id.under_id02)
-        var underId03 = findViewById<TextView>(R.id.under_id03)
-        var underId04 = findViewById<TextView>(R.id.under_id04)
 
         var iv1 = findViewById<ImageView>(R.id.iv_01)
         var iv2 = findViewById<ImageView>(R.id.iv_02)
@@ -203,24 +184,33 @@ class MainActivity : AppCompatActivity() {
                 queue.add(i)
                 queue.add(i)
                 queue.add(i)
-                queue.add(i)
             }
         }
 
         var listTopId = mutableListOf<TextView>(topId01, topId02, topId03, topId04)
-        var listUnderId = mutableListOf<TextView>(underId01, underId02, underId03, underId04)
         var listLong = mutableListOf<TextView>(long01, long02, long03, long04)
         var listImage = mutableListOf<ImageView>(iv1, iv2, iv3, iv4)
 
         for (i in 0..3) {
             listTopId[i].text = queue.poll()
-            listUnderId[i].text = queue.poll()
             listLong[i].text = userMap[queue.poll()?.toString()]?.postWriting?.get(0)
             userMap[queue.poll()?.toString()]?.postImage?.get(0)?.let { listImage[i].setImageResource(it) }
         }
 
 
     }
+
+/*    override fun onRestart() {
+        super.onRestart()
+        val myProfileImage = userMap[loginInfo]?.profile
+        if (myProfileImage == null) {
+            profileImage.setImageResource(R.drawable.defaultprofile)
+        }
+        else{
+            Glide.with(this).load(myProfileImage).into(profileImage)
+        }
+    }*/
+
 
     private fun openGallery() {
         val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
