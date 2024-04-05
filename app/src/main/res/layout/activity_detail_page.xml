@@ -114,14 +114,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="@string/kr_detail_page"
+        android:text="@string/detail_page"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/img_profile"
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -131,14 +131,18 @@
         app:layout_constraintBottom_toTopOf="@+id/scrollView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_home"
-        app:layout_constraintVertical_bias="0.342" />
+        app:layout_constraintVertical_bias="0.342"
+        android:src="@drawable/defaultprofile"
+        app:civ_border_color="@color/story_stoke"
+        app:civ_border_overlay="true"
+        app:civ_border_width="0dp" />
 
     <TextView
         android:id="@+id/thoughts_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:text="@string/kr_thoughts"
+        android:text="@string/feedback"
         app:layout_constraintBottom_toTopOf="@+id/scrollView"
         app:layout_constraintStart_toEndOf="@+id/img_profile"
         app:layout_constraintTop_toBottomOf="@+id/mbti_textview" />
@@ -148,7 +152,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:text="@string/kr_name"
+        android:text="@string/name"
         app:layout_constraintBottom_toTopOf="@+id/mbti_textview"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toEndOf="@+id/img_profile"
@@ -200,8 +204,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:src="@drawable/homeicon"
-        app:layout_constraintEnd_toStartOf="@+id/my_page"
+        app:srcCompat="@drawable/ic_btn_home"        app:layout_constraintEnd_toStartOf="@+id/my_page"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

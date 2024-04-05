@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
+import com.bumptech.glide.Glide
 import com.example.myapplication.MemberManger.userMap
 
 
@@ -23,6 +24,7 @@ class DetailPageActivity : AppCompatActivity() {
             homeIntent = Intent(this@DetailPageActivity, MainActivity::class.java)
             startActivity(homeIntent)
             left()
+            finish()
         }
 
         // 유저정보 출력
@@ -34,15 +36,18 @@ class DetailPageActivity : AppCompatActivity() {
         mbti.text = userMap[userId]?.userMbti
         thoughts.text = userMap[userId]?.userThoughts
 
-        //
+        // 프로필 이미지가 없으면, 기본이미지 출력
         val profileImage = findViewById<ImageView>(R.id.img_profile)
-        val userProfileImage = userMap[userId]?.profile
-        if (userProfileImage == null) {
+        val myProfileImage = userMap[userId]?.profile
+        if (myProfileImage == null) {
             profileImage.setImageResource(R.drawable.defaultprofile)
+        }
+        else{
+            Glide.with(this).load(myProfileImage).into(profileImage)
         }
 
         // 첫번째 게시글의 이름, 이미지, 글
-/*        val userName1 = findViewById<TextView>(R.id.userName1)
+        val userName1 = findViewById<TextView>(R.id.userName1)
         val postImage1 = findViewById<ImageView>(R.id.post_image1)
         val postWriting1 = findViewById<TextView>(R.id.post_writing1)
 
@@ -57,6 +62,6 @@ class DetailPageActivity : AppCompatActivity() {
 
         userName2.text = userId
         userMap[userId]?.postImage?.let { postImage2.setImageResource(it.get(1)) }
-        postWriting2.text = userMap[userId]?.postWriting?.get(1)*/
+        postWriting2.text = userMap[userId]?.postWriting?.get(1)
     }
 }
