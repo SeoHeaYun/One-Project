@@ -62,6 +62,7 @@ class MyPageActivity : AppCompatActivity() {
         myPageBtn = findViewById(R.id.btn_home)
         myPageBtn.setOnClickListener {
             homeIntent = Intent(this@MyPageActivity, MainActivity::class.java)
+            homeIntent.putExtra("loginInfo", loginInfo)
             startActivity(homeIntent)
             left()
         }
@@ -76,21 +77,6 @@ class MyPageActivity : AppCompatActivity() {
         mbti.setText(userMap[loginInfo]?.userMbti)
         thoughts.setText(userMap[loginInfo]?.userThoughts)
         profileImage = findViewById(R.id.img_profile)
-
-        // 수정하기 버튼
-        val btnRevise = findViewById<Button>(R.id.btn_revise)
-        btnRevise.setOnClickListener {
-            val userRevise = MemberManger.UserInfo(
-                name.text.toString(),
-                mbti.text.toString(),
-                thoughts.text.toString(),
-                imageUri,
-                userMap[loginInfo]?.postImage,
-                userMap[loginInfo]?.postWriting
-            )
-
-            userMap[loginInfo] = userRevise
-        }
 
         // 프로필 이미지가 없으면, 기본이미지 출력
         val myProfileImage = userMap[loginInfo]?.profile
@@ -112,20 +98,38 @@ class MyPageActivity : AppCompatActivity() {
         // 첫번째 게시글의 이름, 이미지, 글
         val userName1 = findViewById<TextView>(R.id.userName1)
         val postImage1 = findViewById<ImageView>(R.id.post_image1)
-        val postWriting1 = findViewById<TextView>(R.id.post_writing1)
+        val postWriting1 = findViewById<EditText>(R.id.post_writing1)
 
         userName1.text = loginInfo
         userMap[loginInfo]?.postImage?.let { postImage1.setImageResource(it[0]) }
-        postWriting1.text = userMap[loginInfo]?.postWriting?.get(0)
+        postWriting1.setText(userMap[loginInfo]?.postWriting?.get(0))
 
         // 두번째 게시글의 이름, 이미지, 글
         val userName2 = findViewById<TextView>(R.id.userName2)
         val postImage2 = findViewById<ImageView>(R.id.post_image2)
-        val postWriting2 = findViewById<TextView>(R.id.post_writing2)
+        val postWriting2 = findViewById<EditText>(R.id.post_writing2)
 
         userName2.text = loginInfo
         userMap[loginInfo]?.postImage?.let { postImage2.setImageResource(it[1]) }
-        postWriting2.text = userMap[loginInfo]?.postWriting?.get(1)
+        postWriting2.setText(userMap[loginInfo]?.postWriting?.get(1))
+
+        // 수정하기 버튼
+        val btnRevise = findViewById<Button>(R.id.btn_revise)
+        btnRevise.setOnClickListener {
+            userMap[loginInfo]?.postWriting?.set(0, postWriting1.text.toString())
+            userMap[loginInfo]?.postWriting?.set(1, postWriting2.text.toString())
+
+            val userRevise = MemberManger.UserInfo(
+                name.text.toString(),
+                mbti.text.toString(),
+                thoughts.text.toString(),
+                imageUri,
+                userMap[loginInfo]?.postImage,
+                userMap[loginInfo]?.postWriting
+            )
+
+            userMap[loginInfo] = userRevise
+        }
 
 
         // 다국어지원
