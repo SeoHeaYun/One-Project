@@ -17,7 +17,9 @@ import android.widget.TextView
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.net.toFile
 import com.example.myapplication.MemberManger.userMap
+import java.io.File
 import java.util.Locale
 
 class MyPageActivity : AppCompatActivity() {
