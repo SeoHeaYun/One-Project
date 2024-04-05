@@ -22,7 +22,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-
       <androidx.constraintlayout.widget.ConstraintLayout
           android:layout_width="match_parent"
           android:layout_height="300dp">
@@ -48,11 +47,12 @@
             app:layout_constraintTop_toBottomOf="@+id/userName1"
             tools:srcCompat="@tools:sample/avatars" />
 
-        <TextView
+        <EditText
             android:id="@+id/post_writing1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="44dp"
+            android:background="@null"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.066"
@@ -85,11 +85,12 @@
             app:layout_constraintTop_toBottomOf="@+id/userName2"
             tools:srcCompat="@tools:sample/avatars" />
 
-        <TextView
+        <EditText
             android:id="@+id/post_writing2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="44dp"
+            android:background="@null"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.066"
@@ -115,7 +116,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
-        android:text="@string/kr" />
+        android:text="@string/kr"
+        android:checked="true" />
 
     <RadioButton
         android:id="@+id/rb_en"
@@ -137,17 +139,21 @@
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent" />
 
-  <ImageView
+  <de.hdodenhof.circleimageview.CircleImageView
       android:id="@+id/img_profile"
       android:layout_width="100dp"
       android:layout_height="100dp"
       android:layout_marginStart="20dp"
-      android:background="@drawable/oval"
       android:clipToOutline="true"
       app:layout_constraintBottom_toTopOf="@+id/scrollView"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@+id/btn_home"
-      app:layout_constraintVertical_bias="0.304" />
+      app:layout_constraintVertical_bias="0.304"
+      android:background="@drawable/oval"
+      android:src="@drawable/defaultprofile"
+      app:civ_border_color="@color/story_stoke"
+      app:civ_border_overlay="true"
+      app:civ_border_width="0dp" />
 
   <TextView
       android:id="@+id/thoughts_textview"
@@ -230,20 +236,7 @@
       android:layout_marginTop="20dp"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
       app:srcCompat="@drawable/ic_btn_home" />
-
-  <Button
-      android:id="@+id/btn_profile_change"
-      android:layout_width="wrap_content"
-      android:layout_height="35dp"
-      android:layout_marginTop="5dp"
-      android:background="@color/white"
-      android:text="@string/profile_change"
-      android:textSize="10sp"
-      app:layout_constraintEnd_toEndOf="@+id/img_profile"
-      app:layout_constraintStart_toStartOf="@+id/img_profile"
-      app:layout_constraintTop_toBottomOf="@+id/img_profile" />
 
   <Button
       android:id="@+id/btn_revise"
