@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="login">login</string>
+    <string name="signup">signup</string>
     <string name="app_name">Onestargram</string>
     <string name="sample">Hello</string>
     <string name="my_page">My Page</string>

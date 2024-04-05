@@ -66,12 +66,11 @@
                         android:layout_width="65dp"
                         android:layout_height="65dp"
                         android:layout_marginStart="15dp"
-                        android:src="@drawable/defaultprofile"
                         android:background="@drawable/shape_imageview_circle"
                         android:src="@drawable/a1"
                         app:civ_border_color="@color/story_stoke"
                         app:civ_border_overlay="true"
-                        app:civ_border_width="0dp" />
+                        app:civ_border_width="2dp" />
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -89,8 +88,6 @@
                     android:background="@drawable/shape_imageview_circle"
                     android:padding="2dp"
                     android:src="@drawable/a1"
-                    android:src="@drawable/user1_post1"
-                    android:background="@drawable/shape_imageview_circle"
                     app:civ_border_color="@color/story_stoke"
                     app:civ_border_overlay="true"
                     app:civ_border_width="2dp" />
@@ -103,8 +100,6 @@
                     android:background="@drawable/shape_imageview_circle"
                     android:padding="2dp"
                     android:src="@drawable/a1"
-                    android:src="@drawable/user2_post1"
-                    android:background="@drawable/shape_imageview_circle"
                     app:civ_border_color="@color/story_stoke"
                     app:civ_border_overlay="true"
                     app:civ_border_width="2dp" />
@@ -117,8 +112,6 @@
                     android:background="@drawable/shape_imageview_circle"
                     android:padding="2dp"
                     android:src="@drawable/a1"
-                    android:src="@drawable/user3_post1"
-                    android:background="@drawable/shape_imageview_circle"
                     app:civ_border_color="@color/story_stoke"
                     app:civ_border_overlay="true"
                     app:civ_border_width="2dp" />
@@ -132,8 +125,6 @@
                     android:background="@drawable/shape_imageview_circle"
                     android:padding="2dp"
                     android:src="@drawable/a1"
-                    android:src="@drawable/user4_post1"
-                    android:background="@drawable/shape_imageview_circle"
                     app:civ_border_color="@color/story_stoke"
                     app:civ_border_overlay="true"
                     app:civ_border_width="2dp" />
@@ -164,7 +155,6 @@
                 android:id="@+id/top_id01"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/id_text01"
                 android:textSize="12sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@id/radius1"
@@ -191,18 +181,27 @@
                 app:layout_constraintTop_toBottomOf="@id/top_id01"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"/>
+            <TextView
+                android:id="@+id/under_id01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_01" />
 
             <TextView
                 android:id="@+id/long_text01"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="7dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
                 android:ellipsize="end"
                 android:gravity="left"
                 android:maxLines="2"
-                android:text="@string/long_text01"
                 android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -243,7 +242,6 @@
                 android:id="@+id/top_id02"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/id_text02"
                 android:textSize="12sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@id/radius2"
@@ -264,16 +262,25 @@
                 android:layout_marginEnd="10dp"/>
 
             <TextView
+                android:id="@+id/under_id02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_02" />
+            <TextView
                 android:id="@+id/long_text02"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="7dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
                 android:ellipsize="end"
                 android:gravity="left"
                 android:maxLines="2"
-                android:text="@string/long_text02"
                 android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -314,7 +321,6 @@
                 android:id="@+id/top_id03"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/id_text03"
                 android:textSize="12sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@id/radius3"
@@ -333,16 +339,26 @@
                 app:layout_constraintTop_toBottomOf="@id/top_id03" />
 
             <TextView
+                android:id="@+id/under_id03"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_03" />
+
+            <TextView
                 android:id="@+id/long_text03"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="7dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
                 android:ellipsize="end"
                 android:gravity="left"
                 android:maxLines="2"
-                android:text="@string/long_text03"
                 android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -383,7 +399,6 @@
                 android:id="@+id/top_id04"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/id_text04"
                 android:textSize="12sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@id/radius4"
@@ -402,13 +417,23 @@
                 app:layout_constraintTop_toBottomOf="@id/top_id04"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"/>
+            <TextView
+                android:id="@+id/under_id04"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_04" />
 
             <TextView
                 android:id="@+id/long_text04"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="7dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
                 android:ellipsize="end"
                 android:gravity="left"
