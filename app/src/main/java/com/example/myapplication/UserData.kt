@@ -1,6 +1,7 @@
 package com.example.myapplication
 
 import android.net.Uri
+import java.util.Queue
 
 // 회원 정보 값 리스트에 넣어 보관하는 싱글톤
 
