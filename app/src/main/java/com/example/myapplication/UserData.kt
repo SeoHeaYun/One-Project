@@ -51,16 +51,22 @@ object MemberManger {
         var user4postWriting = mutableListOf("안녕하세요")
 
 
+        var user1 = UserData("강현정","bandal04", "")
+        var user2 = UserData("서해윤","godbs225", "")
+        var user3 = UserData("임봉규","bonggyulim", "123456**")
+        var user4 = UserData("장혜정","jhj123", "")
+
+
+        memberList.add(user1)
+        memberList.add(user2)
+        memberList.add(user3)
+        memberList.add(user4)
+
         var user1Info = UserInfo("강현정", "ISTP", "팀원분들 모두 친절하시고 적극적이어서 첫 팀 프로젝트를 잘 마무리할 수 있었습니다.", null, user1postImage, user1postWriting)
         var user2Info = UserInfo("서해윤", "MBTI", "소감", null, user2postImage, user2postWriting)
         var user3Info = UserInfo("임봉규", "INTP", "안녕하세요", null, user3postImage, user3postWriting)
         var user4Info = UserInfo("장혜정", "MBTI", "소감", null, user4postImage, user4postWriting)
 
-
-        var user1 = UserData("강현정", "a", "b")
-        var user2 = UserData("서해윤", "c","d")
-        var user3 = UserData("bonggyulim", "e","f")
-        var user4 = UserData("장혜정", "g","h")
 
         userMap[user1.userId] = user1Info
         userMap[user2.userId] = user2Info
