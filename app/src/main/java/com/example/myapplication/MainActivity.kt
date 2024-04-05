@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.content.pm.PackageManager
 import android.net.Uri
+import android.provider.ContactsContract.CommonDataKinds.Im
 import android.provider.MediaStore
 import android.util.Log
 import android.view.View
@@ -14,8 +15,11 @@ import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
+import com.bumptech.glide.Glide
 import com.example.myapplication.MemberManger.init
 import com.example.myapplication.MemberManger.userMap
+import java.util.LinkedList
+import java.util.Queue
 
 lateinit var myPageBtn: ImageView // 모든 페이지 좌측 상단에 있는 홈버튼
 lateinit var homeIntent: Intent
@@ -23,7 +27,8 @@ var identifyId = false // ID,PW 입력값과 UserData 리스트값과 일치하�
 var identifyPw = false
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var ivCamera: ImageView
+    private lateinit var loginInfo: String
+    private lateinit var profileImage: ImageView
     private lateinit var IvDetail1: ImageView
     private lateinit var IvDetail2: ImageView
     private lateinit var IvDetail3: ImageView
@@ -37,14 +42,15 @@ class MainActivity : AppCompatActivity() {
                 openGallery()
             }
         }
-    // 선택한 사진 이미지뷰에 등록하기
+    // 선택한 사진 이미지뷰에 등록 & UserMap에 프로필 이미지로 등록
     private val pickImageLauncher: ActivityResultLauncher<Intent> =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == RESULT_OK) {
                 val data: Intent? = result.data
                 data?.data?.let {
                     imageUri = it
-                    ivCamera.setImageURI(imageUri)
+                    profileImage.setImageURI(imageUri)
+                    userMap[loginInfo]?.profile = imageUri
                 }
             }
         }
@@ -57,7 +63,7 @@ class MainActivity : AppCompatActivity() {
                 init()
             }
 
-            val loginInfo = intent.getStringExtra("loginInfo")
+            loginInfo = intent.getStringExtra("loginInfo").toString()
 
             // 마이페이지 버튼 클릭 시
             myPageBtn = findViewById(R.id.btn_mypage)
@@ -76,9 +82,18 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
+            profileImage = findViewById(R.id.Iv_camera)
+            // 프로필 이미지가 없으면, 기본이미지 출력
+            val myProfileImage = userMap[loginInfo]?.profile
+            if (myProfileImage == null) {
+                profileImage.setImageResource(R.drawable.defaultprofile)
+            }
+            else{
+                Glide.with(this).load(myProfileImage).into(profileImage)
+            }
+
             //프로필 사진 이미지뷰 클릭 시
-            ivCamera = findViewById(R.id.Iv_camera)
-            ivCamera.setOnClickListener {
+            profileImage.setOnClickListener {
                 if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
                     openGallery()
                 } else {
@@ -86,7 +101,6 @@ class MainActivity : AppCompatActivity() {
                     right()
                 }
             }
-
 
             // 유저별 스토리 클릭시
             IvDetail1 = findViewById(R.id.Iv_detail1)
@@ -99,7 +113,7 @@ class MainActivity : AppCompatActivity() {
                 story.setOnClickListener {
                     val detailPage = Intent(this@MainActivity, DetailPageActivity::class.java)   // 로그인 되어 있을 시, 내 정보 값 던지면서 개인페이지로 이동
                     when (story) {
-                        IvDetail1 -> detailPage.putExtra("userId", "bandal04")
+                        IvDetail1 -> detailPage.putExtra("userId", "bandal03")
                         IvDetail2 -> detailPage.putExtra("userId", "서해윤")
                         IvDetail3 -> detailPage.putExtra("userId", "bonggyulim")
                         IvDetail4 -> detailPage.putExtra("userId", "장혜정")
@@ -128,7 +142,13 @@ class MainActivity : AppCompatActivity() {
         var id03 = findViewById<TextView>(R.id.top_id03)
         var id04 = findViewById<TextView>(R.id.top_id04)
 
-        val idList = listOf<TextView>(id01, id02, id03, id04)
+        var topId01 = findViewById<TextView>(R.id.top_id01)
+        var topId02 = findViewById<TextView>(R.id.top_id02)
+        var topId03 = findViewById<TextView>(R.id.top_id03)
+        var topId04 = findViewById<TextView>(R.id.top_id04)
+
+
+        val idList = listOf<TextView>(topId01, topId02, topId03, topId04)
 
         idList.forEach { detail ->
             detail.setOnClickListener {
@@ -139,8 +159,24 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        //더보기 기능 실행
+        setViewMore(long01, short01)
+        setViewMore(long02, short02)
+        setViewMore(long03, short03)
+        setViewMore(long04, short04)
 
+    }
 
+/*    override fun onRestart() {
+        super.onRestart()
+        val myProfileImage = userMap[loginInfo]?.profile
+        if (myProfileImage == null) {
+            profileImage.setImageResource(R.drawable.defaultprofile)
+        }
+        else{
+            Glide.with(this).load(myProfileImage).into(profileImage)
+        }
+    }*/
 
             //더보기 기능 실행
             setViewMore(long01, short01)
@@ -148,8 +184,44 @@ class MainActivity : AppCompatActivity() {
             setViewMore(long03, short03)
             setViewMore(long04, short04)
 
+        var underId01 = findViewById<TextView>(R.id.under_id01)
+        var underId02 = findViewById<TextView>(R.id.under_id02)
+        var underId03 = findViewById<TextView>(R.id.under_id03)
+        var underId04 = findViewById<TextView>(R.id.under_id04)
+
+        var iv1 = findViewById<ImageView>(R.id.iv_01)
+        var iv2 = findViewById<ImageView>(R.id.iv_02)
+        var iv3 = findViewById<ImageView>(R.id.iv_03)
+        var iv4 = findViewById<ImageView>(R.id.iv_04)
+
+
+        var queue: Queue<String> = LinkedList()
+        var userlist = userMap.keys.toList()
+        Log.d("userlist", "$userlist")
+        for (i in userlist.reversed()) {
+            if (userMap[i]?.postWriting?.get(0) != null) {
+                queue.add(i)
+                queue.add(i)
+                queue.add(i)
+                queue.add(i)
+            }
+        }
+
+        var listTopId = mutableListOf<TextView>(topId01, topId02, topId03, topId04)
+        var listUnderId = mutableListOf<TextView>(underId01, underId02, underId03, underId04)
+        var listLong = mutableListOf<TextView>(long01, long02, long03, long04)
+        var listImage = mutableListOf<ImageView>(iv1, iv2, iv3, iv4)
+
+        for (i in 0..3) {
+            listTopId[i].text = queue.poll()
+            listUnderId[i].text = queue.poll()
+            listLong[i].text = userMap[queue.poll()?.toString()]?.postWriting?.get(0)
+            userMap[queue.poll()?.toString()]?.postImage?.get(0)?.let { listImage[i].setImageResource(it) }
+        }
+
 
     }
+
     private fun openGallery() {
         val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
         pickImageLauncher.launch(gallery)

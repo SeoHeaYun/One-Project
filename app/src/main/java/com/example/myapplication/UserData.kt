@@ -1,6 +1,7 @@
 package com.example.myapplication
 
 import android.net.Uri
+import java.util.Queue
 
 // 회원 정보 값 리스트에 넣어 보관하는 싱글톤
 
@@ -53,11 +54,11 @@ object MemberManger {
         var user4postImage = mutableListOf(R.drawable.user4_post1)
 
         var user1postWriting = mutableListOf("안녕하세요", "다들 좋은 하루 보내세요")
-        var user2postWriting = mutableListOf("안녕하세요")
+        var user2postWriting = mutableListOf("안녕하세요", "다들 좋은 하루 보내세요")
         var user3postWriting = mutableListOf("안녕하세요", "다들 좋은 하루 보내세요")
-        var user4postWriting = mutableListOf("안녕하세요")
+        var user4postWriting = mutableListOf("안녕하세요", "다들 좋은 하루 보내세요")
 
-        var user1 = UserData("bandal04", "")
+        var user1 = UserData("bandal03", "Aaaa123!")
         var user2 = UserData("서해윤", "")
         var user3 = UserData("bonggyulim", "123456**")
         var user4 = UserData("장혜정", "")
