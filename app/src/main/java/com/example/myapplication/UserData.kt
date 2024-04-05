@@ -61,17 +61,17 @@ object MemberManger {
         var user1 = UserData("bandal03", "Aaaa123!")
         var user2 = UserData("서해윤", "")
         var user3 = UserData("bonggyulim", "123456**")
-        var user4 = UserData("장혜정", "")
+        var user4 = UserData("hyejeong", "aaaa1111@")
 
         memberList.add(user1)
         memberList.add(user2)
         memberList.add(user3)
         memberList.add(user4)
 
-        var user1Info = UserInfo("강현정", "ISTP", "팀원분들 모두 친절하시고 적극적이어서 첫 팀 프로젝트를 잘 마무리할 수 있었습니다.", null, user1postImage, user1postWriting)
+        var user1Info = UserInfo("강현정", "ISTP", "팀원분들 모두 친절하시고 적극적이어서\n 첫 팀 프로젝트를 잘 마무리할 수 있었습니다.", null, user1postImage, user1postWriting)
         var user2Info = UserInfo("서해윤", "MBTI", "소감", null, user2postImage, user2postWriting)
-        var user3Info = UserInfo("임봉규", "INTP", "안녕하세요", null, user3postImage, user3postWriting)
-        var user4Info = UserInfo("장혜정", "MBTI", "소감", null, user4postImage, user4postWriting)
+        var user3Info = UserInfo("임봉규", "INTP", "첫 팀프로젝트에 감기까지 걸려서 힘들었는데 팀원분들\n 모두 열심히 하신 덕분에 잘 따라갈 수 있었습니다.", null, user3postImage, user3postWriting)
+        var user4Info = UserInfo("장혜정", "ISFJ", "처음하는 프로젝트 팀원들\n 덕분에 잘 끝내서 다행인것같습니다.", null, user4postImage, user4postWriting)
 
 
         userMap[user1.userId] = user1Info
