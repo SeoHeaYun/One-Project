@@ -102,12 +102,14 @@
   : 이후,  최소한의 기능 단위로 개발 후,  수시로 commit하는 습관을 들임
 
 > ## 싱글톤(Singleton)의 필요성
-> 
+
  - Issue
    : 코틀린kt. 파일에 필요한 이미지들을 그때그때 적용하다 보니, 중복되는 경우가 발생 → 코드중복,  리소스 낭비 문제발생 인지
-- Solve
+   
+ - Solve
    :  Object 클래스를 만들어, 앱 실행 시 바로 이미지 객체를 만들고, 이 데이터들을 Map형태로 관리하여, 필요할 때 가져다 쓰기
-![image](https://github.com/SeoHeaYun/One-Project/assets/159236003/c4f99b29-c2fd-4c71-bc0f-4a06781675e8)
+   
+ ![image](https://github.com/SeoHeaYun/One-Project/assets/159236003/c4f99b29-c2fd-4c71-bc0f-4a06781675e8)
 
 > ## Activiyty 생명주기: 프로필 갤러리 사진 등록 이슈
 
