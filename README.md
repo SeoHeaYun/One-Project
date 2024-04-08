@@ -43,13 +43,13 @@
 <table>
   <tbody>
     <tr>
-      <td align="center"><a href="https://github.com/"><img src="https://github.com/SeoHeaYun/One-Project/assets/159236003/1a2f4fb1-f445-4bf5-a1da-9453d2ec64ba"
+      <td align="center"><a href="https://github.com/SeoHeaYun"><img src="https://github.com/SeoHeaYun/One-Project/assets/159236003/1a2f4fb1-f445-4bf5-a1da-9453d2ec64ba"
       heigt="50px" width="50px"/><br /><sub><b>팀장: 서해윤 </b></sub></a><br /></td>
       <td align="center"><a href="https://github.com/BanDalKang"><img src="https://github.com/SeoHeaYun/One-Project/assets/159236003/44e2ebc9-c476-46a4-8295-a03833d226a3" 
        heigt="50px" width="50px"/><br /><sub><b>팀원 : 강현정 </b></sub></a><br /></td>
-      <td align="center"><a href="https://github.com/"><img src="https://github.com/SeoHeaYun/One-Project/assets/159236003/b6f4d822-36fb-4917-ada7-a7c6325d3fdf"
+      <td align="center"><a href="https://github.com/hyezg"><img src="https://github.com/SeoHeaYun/One-Project/assets/159236003/b6f4d822-36fb-4917-ada7-a7c6325d3fdf"
        height="60px" width="50px";/><br /><sub><b>팀원: 장혜정 </b></sub></a><br /></td>
-      <td align="center"><a href="https://github.com/"><img src="https://github.com/SeoHeaYun/One-Project/assets/159236003/076e2da2-ee9e-4dac-872b-4450cb22a9d7"
+      <td align="center"><a href="https://github.com/bonggyulim"><img src="https://github.com/SeoHeaYun/One-Project/assets/159236003/076e2da2-ee9e-4dac-872b-4450cb22a9d7"
        height="60px"width="50px;" alt=""/><br /><sub><b>팀원: 임봉규 </b></sub></a><br /></td>
      <tr/>
   </tbody>
