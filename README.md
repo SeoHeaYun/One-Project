@@ -4,11 +4,12 @@
 
 ## 📚 목차
 
-- [프로젝트 소개 및 팀플랜](#프로젝트-배경)
-- [앱 시연 영상](#팀-구성)
-- [제작과정 및 협업과정](#기술-스택)
-- [트러블 슈팅](#apis)
-- [후기 및 회고](#라이센스)
+- [프로젝트 소개 및 팀플랜](#프로젝트-소개)
+- [팀 구성](#팀-구성)
+- [앱 시연 영상](#앱-시연)
+- [제작과정 및 협업과정](#제작과정)
+- [트러블 슈팅](#트러블)
+- [후기 및 회고](#후기)
 
 # 📝 프로젝트 소개 및 팀플랜
 
@@ -37,31 +38,60 @@
   - Design: 사용자 UI 디자인 변경시
   - etc..
 
-## 👩‍👧‍👧 팀 구성
+
+# 👩‍👧‍👧 팀 구성
 
 <table>
   <tbody>
     <tr>
-      <td align="center"><a href="https://github.com/"><img src="![image](https://github.com/SeoHeaYun/One-Project/assets/159236003/97c18583-cfcc-44b2-9440-4fd0aac35a1c)"
-      width="100px" alt=""/><br /><sub><b>팀장: 서해윤 </b></sub></a><br /></td>
-      <td align="center"><a href="https://github.com/BanDalKang"><img src="" width="100px;" alt=""/><br /><sub><b>팀원 : 강현정 </b></sub></a><br /></td>
-      <td align="center"><a href="https://github.com/"><img src="" width="100px;" alt=""/><br /><sub><b>팀원: 장혜정 </b></sub></a><br /></td>
-      <td align="center"><a href="https://github.com/"><img src="" width="100px;" alt=""/><br /><sub><b>팀원: 임봉규 </b></sub></a><br /></td>
+      <td align="center"><a href="https://github.com/"><img src="https://github.com/SeoHeaYun/One-Project/assets/159236003/1a2f4fb1-f445-4bf5-a1da-9453d2ec64ba"
+      heigt="50px" width="50px"/><br /><sub><b>팀장: 서해윤 </b></sub></a><br /></td>
+      <td align="center"><a href="https://github.com/BanDalKang"><img src="https://github.com/SeoHeaYun/One-Project/assets/159236003/44e2ebc9-c476-46a4-8295-a03833d226a3" 
+       heigt="50px" width="50px"/><br /><sub><b>팀원 : 강현정 </b></sub></a><br /></td>
+      <td align="center"><a href="https://github.com/"><img src="https://github.com/SeoHeaYun/One-Project/assets/159236003/b6f4d822-36fb-4917-ada7-a7c6325d3fdf"
+       height="60px" width="50px";/><br /><sub><b>팀원: 장혜정 </b></sub></a><br /></td>
+      <td align="center"><a href="https://github.com/"><img src="https://github.com/SeoHeaYun/One-Project/assets/159236003/076e2da2-ee9e-4dac-872b-4450cb22a9d7"
+       height="60px"width="50px;" alt=""/><br /><sub><b>팀원: 임봉규 </b></sub></a><br /></td>
      <tr/>
   </tbody>
 </table>
 <br/>
 
-## ⚙️ 기술 스택
+# ⚙️ 앱 시연영상
+![image](https://github.com/SeoHeaYun/One-Project/assets/159236003/447b50e1-bc6d-46d7-bf86-962867e2fae6)
+(https://youtu.be/3VBq5TbABWU)
 
-* Programming Languages and Tools <br/> <br/>
-<img src="https://img.shields.io/badge/JAVA-007396?style=flat-square&logo=OpenJDK&logoColor=white"> <img src="https://img.shields.io/badge/AndroidStudio-3DDC84?style=flat-square&logo=AndroidStudio&logoColor=white"/> <img src="https://img.shields.io/badge/GitKraken-179287?style=flat-square&logo=GitKraken&logoColor=white"/>
-<br/>
+# 🏷️ 제작과정 및 협업과정
+## 타임라인
+- 4/1: 기획
+  - 요구사항 명세서 👉 구현사항 분석
+  - 와이어 프레임 구상
+  - 기술 스택 선정
+  - 역할분배
+- 4/2 ~ 4/3: 개발
+  - Git과 칸반보드를 활용한 의견 문서화 및 공유
+- 4/4: 디자인
+  - 코드 병합 후 개선점 추가 및 UI 통일
+- 4/5: MERGE
+  - Main 브랜치에 merge 후 시연영상 제작
+ 
+## 기획: 요구사항 명세서
+![image](https://github.com/SeoHeaYun/One-Project/assets/159236003/c83ce2ab-476b-4bb8-a183-157208fca93c)
 
-## 🏷️ APIs
+- 각 구현사항들을 세부적으로 나누어 분류
+- 구현사항의 설명을 바탕으로 중요도 설정
+- 필수구현 사항을 중점으로 와이어프레임 구상
 
-* NAVER Map Android SDK 3.16.1
-<br/>
+ ## 기획: 와이어프레임(Figma)
+  ![image](https://github.com/SeoHeaYun/One-Project/assets/159236003/4f66c960-51b4-45ba-ba56-a3cefbe812fb)
+  
+## 개발: 칸반보드 활용
+![image](https://github.com/SeoHeaYun/One-Project/assets/159236003/889356c8-afa3-40a6-a853-522253aa3b7f)
+
+- 각 요소를 칸반(Kanvan)이라고 하고, 개발 구현 상황(할 일, 진행 중, 완료)에 맞추어,  칸반을 이동
+- 문서화:  각 구현을 진행하면서, 생겼던 문제와 해결 방안 그리고 참고자료 등을 해당 칸반에 기재
+- 역할 분배:  각 칸반에 담당자 이름을 기재하여, 역할 분담
+
 
 ## 🪪 라이센스
 
